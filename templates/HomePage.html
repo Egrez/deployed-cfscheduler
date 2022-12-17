@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+
+<div class = "container1" styles = "margin-top: 0; padding: 0;">
+    <div><img style = "left: 2.3%; position: absolute;" src = "{% static 'bookmark-horizontal.png' %}"width = "945.35px" height = "695.35px"></div>
+    <div style = "margin-left: 1035.35px;">
+        <div>
+            <p style = "margin: 0%; padding: 0%;  font-family: Poppins_bold; font-size: 105px; font-weight: 100;">Find the</p>
+            <p style = "margin: 0%; padding: 0%; line-height: 78.35%; font-family: Poppins_bold; font-size: 105px; font-weight: 100;">Right Time</p>
+            <br>
+            <p style = "margin-right: 35.35%; text-align: justify; line-height: 135%; font-family: Montserrat;">Lorem ipsum corporis aut quod voluptas. Sit officia voluptatum qui galisum expedita et nihil omnis eos Quis velit aut voluptates debitis qui Quis molestias qui Adrian and Fort was here </p>
+            <i class="fa fa-question-circle" style = "margin-left: 290px; margin-top: 0%; margin-bottom: 0%; color: #FFC31D; font-size: 27px;"></i>
+            <div>
+                <a href="{% url 'event' %}"><button class = "genButt" type = "button" id = "Create Event Home">Create Event</button></a>
+            </div>
+            <div style = "list-style-type: none; margin-top: 50px; padding: 0; width: 38%; background-color: #F9D36D; position: absolute; height: 1%; box-shadow: 0 10px 4px 0 rgba(0, 0, 0, 0.3);"></div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

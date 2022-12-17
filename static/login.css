@@ -1,0 +1,45 @@
+*{
+    box-sizing: border-box;
+}
+
+form{
+    border: 1px solid black;
+    border-radius: 10px; 
+    width: 400px;
+    margin: 0 auto;
+}
+
+.form-wrapper{
+    margin: 0 10px;
+    padding: 50px;
+}
+
+input{
+    width: 100%;
+    margin: 0px;
+    margin-bottom: 10px;
+    padding: 0px;
+}
+
+#id_remember{
+    width: auto;
+}
+
+a{
+    float:right;
+}
+
+#login{
+    margin-top: 10px;
+    padding: 10px;
+    border: 1px black solid;
+    border-radius: 30px;
+    cursor: pointer;
+}
+
+.status{
+    height: 25px;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+}

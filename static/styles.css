@@ -1,0 +1,99 @@
+@font-face {
+    font-family: Poppins; src: url("Poppins-Regular.ttf");
+}
+
+@font-face {
+    font-family: Poppins_bold; src: url("Poppins-Bold.ttf");
+}
+
+@font-face {
+    font-family: Montserrat; src: url("Montserrat-VariableFont_wght.ttf");
+}
+
+.genButt {
+    border-radius: 23px;
+    font-family: Poppins_bold;
+    font-size: 30px;
+    background-color: #666565;
+    color: #f2f2f2;
+    transition-duration: 0.4s;
+    width: 280px;
+    height: 83px;
+    border-color: #666565;
+    border-style: none;
+    cursor: pointer;
+    margin-top: 0%;
+    box-shadow: 0 6px 12px 0 rgba(0, 0, 0, 0.3);
+
+}
+
+.genButt:hover {
+    background-color: #333333;
+    color: #F9D36D;
+}
+
+.leftBar {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    width: 2.3%;
+    background-color: #ffc31d;
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    overflow: auto;
+    box-shadow:0 6px 18px 0 rgba(0, 0, 0, 0.3), 0 6px 18px 0 rgba(0, 0, 0, 0.19);
+}
+
+.topBlock {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    width: 97.69%;
+    background-color: #333333;
+    position: fixed;
+    top: 0;
+    right: 0;
+    height: 0.7%;
+    transition: top 0.3s;
+}
+
+.navBar {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    width: 97.69%;
+    background-color: #413D3D;
+    position: fixed;
+    top: 7px;
+    right: 0;
+    height: 4.5%;
+    box-shadow: 0 8px 4px 0 rgba(0, 0, 0, 0.3);
+    transition: top 0.3s;
+}
+
+.navBar a {
+    float: left;
+    color: #f2f2f2;
+    text-align: center;
+    padding: 8px 14px;
+    text-decoration: none;
+    font-size: 19px;
+    font-weight: 500;
+    font-family: Poppins;
+    text-shadow: 1.5px 3.8px 3px #000000;
+    letter-spacing: 0.5px;
+    border-right: 1.5px solid #333333;
+}
+
+.navBar a:hover {
+    background-color: #333333;
+    color: #FFC31D;
+
+}
+
+.container1 {
+    width: 100%;
+    height: auto;
+}

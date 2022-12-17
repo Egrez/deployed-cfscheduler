@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block stylesheet %}
+    <link rel="stylesheet" href="{% static 'login.css' %}">
+{% endblock %}
+
+{% block content %}
+
+	<form action="" method="post">
+		{% csrf_token %}
+		<div class="form-wrapper">
+			<div class="fields">
+				<div>Event name: {{ event_name }} </div>
+				<div>
+					{{ form.username.errors }}
+					<label for="{{ form.username.id_for_label }}"> Username: </label>
+					{{ form.username }}
+				</div>
+				<div>
+					{{ form.password.errors }}
+					<label for="{{ form.password.id_for_label }}"> Password: </label>
+					{{ form.password }}
+				</div>
+			</div>
+
+			{{ form.remember }}
+			{{ form.remember.label }}
+			
+			<a href="#">Forgot Password?</a>
+			<div class="status" style="visibility: {% if form.errors or form.is_valid %} visible {% else %} hidden {% endif %}; background-color:{% if form.errors %}pink{% elif form.is_valid %}lightgreen;{% endif %}"> {% if form.errors %}Invalid login details{% elif form.is_valid %}Successfully logged in{% endif %}</div>
+			<input type="submit" name="login" value="Login" id="login">
+		</div>
+	</form>
+{% endblock %}
+
+{% block scripts %}
+	<script src="{% static 'login.js' %}"></script>
+{% endblock %}

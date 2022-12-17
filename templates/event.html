@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<style>
+
+</style>
+
+<div style = "margin: 0 auto; width: 50%; height: 100%;">
+    <div style = "margin: 0 auto; width: 50%; height: 100%; text-align: center;">
+    <form action="" method="POST">
+        {% csrf_token %}
+        <div>
+            {{ form.event_name.errors }}
+            {{ form.event_name }}
+        </div>
+
+    <input type="submit" name="create-event" value="Create Event">
+    </form>
+    </div>
+</div>
+
+{% endblock %}
