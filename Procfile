@@ -1,1 +1,1 @@
-web: python manage.py migrate && python manage.py collecstatic && gunicorn cfscheduler.wsgi
+web: python manage.py migrate && python manage.py collectstatic && gunicorn cfscheduler.wsgi
