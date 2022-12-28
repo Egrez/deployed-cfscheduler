@@ -7,7 +7,21 @@
 }
 
 @font-face {
-    font-family: Montserrat; src: url("Montserrat-VariableFont_wght.ttf");
+    font-family: Montserrat; src: url("Montserrat Regular 400.ttf");
+}
+
+@font-face {
+    font-family: Montserrat_extralight; src: url("Montserrat ExtraLight 275.ttf");
+}
+
+@font-face {
+    font-family: Poppins_semibold; src:url("Poppins-SemiBold.ttf");
+
+}
+html,body
+{
+    right: 0;
+    margin-right: 0%;
 }
 
 .genButt {
@@ -30,6 +44,27 @@
 .genButt:hover {
     background-color: #333333;
     color: #F9D36D;
+}
+
+.learnButt {
+    border-radius: 31px;
+    font-family: Poppins_semibold;
+    font-size: 45px;
+    background-color: #FFC31D;
+    color:#f2f2f2;
+    transition-duration: 0.4s;
+    width: 553px;
+    height: 87px;
+    border-color:#FFC31D;
+    border-style: none;
+    cursor: pointer;
+    margin-top: 0%;
+    box-shadow: 0 6px 12px 0 rgba(0, 0, 0, 0.3);
+}
+
+.learnButt:hover {
+    background-color: #F9D36D;
+    color:#333333
 }
 
 .leftBar {
@@ -96,4 +131,7 @@
 .container1 {
     width: 100%;
     height: auto;
+    right: 0;
+    margin: 0;
+    padding: 0;
 }
