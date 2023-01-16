@@ -9,5 +9,4 @@ class Event(models.Model):
     name = models.CharField(max_length=40)
 
     def get_event_url(self):
-        """Returns the URL to access a detail record for this book."""
         return reverse('event-url', args=[str(self.id)])
