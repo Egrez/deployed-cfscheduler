@@ -18,10 +18,52 @@
     font-family: Poppins_semibold; src:url("Poppins-SemiBold.ttf");
 
 }
+
+@font-face {
+    font-family: Montserrat_bold; src: url("Montserrat Bold 700.ttf");
+}
+
 html,body
 {
     right: 0;
     margin-right: 0%;
+}
+
+.genEventButt {
+    border-radius: 45px;
+    font-family: Poppins_bold;
+    font-size: 36px;
+    background-color: #666565;
+    color: #f2f2f2;
+    transition-duration: 0.4s;
+    width: 550px;
+    height: 65px;
+    border-color: #666565;
+    border-style: none;
+    cursor: pointer;
+    margin-left: 150px;
+    margin-top: 320px;
+    box-shadow: 0 6px 12px 0 rgba(0, 0, 0, 0.3);
+    text-align: center;
+}
+
+.genEventButt:hover {
+    background-color: #333333;
+    color: #F9D36D;
+}
+
+.footer {
+    list-style-type: none;
+    margin-bottom: 100px;
+    margin-top: 100px;
+    padding-bottom: 0;
+    width: 100%;
+    background-color: #2f2f2f;
+    position: relative;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 17%;
 }
 
 .genButt {
@@ -134,4 +176,132 @@ html,body
     right: 0;
     margin: 0;
     padding: 0;
+}
+
+.column {
+    float: left;
+    width: 45%;
+    padding: 10px;
+}
+
+.row:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+.textEvent {
+    width: 850px;
+    padding: 12px 20px;
+    height: 43px;
+    box-sizing: border-box;
+    display: block;
+    border-radius: 8px;
+    box-shadow: 2px 4px 4px 0 rgba(0, 0, 0, 0.22);
+    margin-left: 2%;
+    font-family: Poppins;
+    font-size: 25px;
+    text-overflow: ellipsis;
+}
+
+.passwordEvent {
+    width: 850px;
+    padding: 12px 20px;
+    height: 43px;
+    box-sizing: border-box;
+    display: block;
+    border-radius: 8px;
+    box-shadow: 2px 4px 4px 0 rgba(0, 0, 0, 0.22);
+    margin-left: -3%;
+    font-family: Poppins;
+    font-size: 25px;
+    text-overflow: ellipsis;
+}
+
+.footerfont {
+    color:#f2f2f2;
+    font-family: Montserrat_bold;
+    font-weight: bolder;
+    font-size: 22px ;
+}
+
+.label {
+    list-style-type: none;
+    padding-bottom: 0;
+    width: 250px;
+    background-color: #FFC31D;
+    position: absolute;
+    margin-top: 100px;
+    height: 75px;
+    border-radius: 30px;
+    font-family: Montserrat_bold;
+    text-align: center;
+}
+
+.dropdown {
+    list-style-type: none;
+    padding-top: 20px;
+    width: 300px;
+    background-color: #333333;
+    position: absolute;
+    margin-top: 200px;
+    margin-bottom: 300px;
+    height: 50px;
+    border-radius: 10px;
+    font-family: Montserrat_bold;
+    text-align: left;
+}
+
+.genButtSign {
+    border-radius: 45px;
+    font-family: Poppins_bold;
+    font-size: 30px;
+    background-color: #666565;
+    color: #f2f2f2;
+    transition-duration: 0.4s;
+    width: 273px;
+    height: 76px;
+    border-color: #666565;
+    border-style: none;
+    cursor: pointer;
+    margin-left: 22%;
+    margin-top: 15%;
+    box-shadow: 0 6px 12px 0 rgba(0, 0, 0, 0.3);
+}
+
+.genButtSign:hover {
+    background-color: #333333;
+    color: #F9D36D;
+}
+
+.text {
+    width: 850px;
+    padding: 12px 20px;
+    height: 43px;
+    box-sizing: border-box;
+    display: block;
+    border-radius: 8px;
+    box-shadow: 2px 4px 4px 0 rgba(0, 0, 0, 0.22);
+    margin-left: -5%;
+    font-family: Poppins;
+    font-size: 25px;
+    text-overflow: ellipsis;
+}
+
+.password {
+    width: 850px;
+    padding: 12px 20px;
+    height: 43px;
+    box-sizing: border-box;
+    display: block;
+    border-radius: 8px;
+    box-shadow: 2px 4px 4px 0 rgba(0, 0, 0, 0.22);
+    margin-left: -5%;
+    font-family: Poppins;
+    font-size: 25px;
+    text-overflow: ellipsis;
 }
