@@ -15,18 +15,21 @@
     <div class = "column">
         <img id = "logo" style = "margin-top: 100px; margin-right: 200px; margin-left: 0;" src = "{% static 'logo.png' %}" width = "710.35px" height = "440.45px">
         <div style = "left: 750px; list-style-type: none; margin-top: 60px; padding: 0; width: 63%; background-color: #F9D36D; position: absolute; height: 1%; box-shadow: 0 10px 4px 0 rgba(0, 0, 0, 0.3);"></div>        
-        <form>
-            <input style = "width: 500px; height: 80px; text-align: center; border-radius: 40px; box-shadow: 4px 6px 5px 0 rgba(0, 0, 0, 0.3); margin-top: 200px; margin-left: 200px; font-family: Poppins_bold; font-size: 40px;" placeholder = "Event Name"> <!--put placeholder here-->
+        <form action="" method="POST">
+            {% csrf_token %}
+            {{ form.event_name.errors }}
+            {{ form.event_name }}
             <input class = "textEvent" style= "margin-top: 7%; font-weight: bolder;" name = "fname" value = "Timezone: Asia / Manila" readonly>
             <input class = "textEvent" style= "margin-top: 2%; font-weight: bolder;" name = "fname" value = "Select Event Type: Multiple Inviters" readonly>
             <input class = "textEvent" style= "margin-top: 2%; font-weight: bolder;" name = "fname" value = "Select Email Sender: testemail@cfs.up.com" readonly>
             <input class = "textEvent" style= "margin-top: 2%; font-weight: bolder;" name = "fname" value = "Event Duration: 15 Minutes" readonly>
+        
+            <div class = "label" style = "left: 1050px;" ><p style = "font-family: Montserrat_bold; margin-top: 20px; font-size: 30px; color: #413D3D; font-weight: bold;">Start time</p></div>
+            <div class = "label" style = "left: 1660px;"><p style = "font-family: Montserrat_bold; margin-top: 20px; font-size: 30px; color: #413D3D; font-weight: bold;">End time</p></div>
+            <div class = "dropdown" style = "left: 1028px; margin-bottom: 80px;"><p style = "font-family: Poppins; font-size: 30px; font-weight: bold; color: #f2f2f2; margin-top: -14px; margin-left: 27px;">9:00 AM</p></div>
+            <div class = "dropdown" style = "left: 1640px; margin-bottom: 80px;"><p style = "font-family: Poppins; font-size: 30px; font-weight: bold; color: #f2f2f2; margin-top: -14px; margin-left: 27px;">10:00 PM</p></div>
+            <input type="submit" name="create-event" class = "genEventButt" id = "Generate Event" class value="Generate Event" >
         </form>
-        <div class = "label" style = "left: 1050px;" ><p style = "font-family: Montserrat_bold; margin-top: 20px; font-size: 30px; color: #413D3D; font-weight: bold;">Start time</p></div>
-        <div class = "label" style = "left: 1660px;"><p style = "font-family: Montserrat_bold; margin-top: 20px; font-size: 30px; color: #413D3D; font-weight: bold;">End time</p></div>
-        <div class = "dropdown" style = "left: 1028px; margin-bottom: 80px;"><p style = "font-family: Poppins; font-size: 30px; font-weight: bold; color: #f2f2f2; margin-top: -14px; margin-left: 27px;">9:00 AM</p></div>
-        <div class = "dropdown" style = "left: 1640px; margin-bottom: 80px;"><p style = "font-family: Poppins; font-size: 30px; font-weight: bold; color: #f2f2f2; margin-top: -14px; margin-left: 27px;">10:00 PM</p></div>
-        <button type = "button" id = "Generate Event" class = "genEventButt">Generate Event</button>
 
     </div>
 </div>
