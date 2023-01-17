@@ -13,26 +13,26 @@ from django.urls import reverse
 
 
 def event(request):
-    if request.method == 'POST':
-        form = CreateEventForm(data=request.POST)
+    # if request.method == 'POST':
+    #     form = CreateEventForm(data=request.POST)
 
-        if form.is_valid():
-            event_name = form.cleaned_data['event_name']
-            event_id = get_random_string(14, string.ascii_letters + string.digits)
+    #     if form.is_valid():
+    #         event_name = form.cleaned_data['event_name']
+    #         event_id = get_random_string(14, string.ascii_letters + string.digits)
 
-            event = Event(id=event_id, name=event_name)
-            event.save()
+    #         event = Event(id=event_id, name=event_name)
+    #         event.save()
 
-            print()
+    #         print()
 
-            return HttpResponseRedirect(reverse("login", args=[event_id]))           
+    #         return HttpResponseRedirect(reverse("login", args=[event_id]))           
 
-    else:
-        form = CreateEventForm(initial={'event_name': 'New Event Name'})
+    # else:
+    #     form = CreateEventForm(initial={'event_name': 'New Event Name'})
 
-    context = {
-        'form': form,
-    }
+    # context = {
+    #     'form': form,
+    # }
 
     
-    return render(request, "event.html", context)
+    return render(request, "CreateEventPage.html")
