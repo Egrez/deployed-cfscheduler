@@ -16,8 +16,6 @@
     <div class = "leftBar"></div>
 
     <div><img style = "margin-right: 0; right: 0px; position: absolute;"  src = "{% static 'rightBorder.png' %}" width="780.35px" height="350.45px"></div> 
-    {% block content %}
-    {% endblock %}      
 
     <nav class="navbar navbar-inverse navbar-fixed-top">
         <div class = "topBlock" style = "z-index: 999;"></div>
@@ -27,17 +25,22 @@
             <a href="#"><i class="fa fa-question-circle-o"></i> FAQs</a>
         </div>
     </nav>
+    {% block content %}
+    {% endblock %}      
 
-    <div style> <!--footer-->
+   
+
+    <div> <!--footer-->
         <div class = "footer">
             <p class = "footerfont" style = "margin-left: 60px; margin-top: 33px;">Terms of Service</p>
             <p class = "footerfont" style = "margin-left: 60px; margin-top: 33px;">Privacy Policy</p>
             <p class = "footerfont" style = "margin-top: -112px; margin-left: 380px;">Contact Us:</p>
             <p style = "color: #f2f2f2; margin-top: -11px; margin-left: 380px; font-family: Montserrat; font-size: 20px;"><i class = "fa fa-envelope"></i> CFScheduler@gmail.com</p>
             <p style = "color: #f2f2f2; margin-top: -11px; margin-left: 380px; font-family: Montserrat; font-size: 20px;"><i class = "fa fa-map-marker" style = "size: 30px;"></i> University of the Philippines, Diliman, Quezon City</p>
+            <div style = "left: -10px; list-style-type: none; padding: 0; width: 96%; margin-left: 60px; bottom: 0px; background-color: #f2f2f2; position: relative; height: 5.5px;"></div>
             <p class = "footerfont" style = "margin-top: 10px; margin-left: 60px;"><i class = "fa fa-copyright"></i> 2022 CF/Scheduler Team</p>
         </div>
-        <div style = "left: -10px; list-style-type: none; padding: 0; width: 96%; margin-left: 60px; bottom: -205px; background-color: #f2f2f2; position: relative; height: 5.5px;"></div>
+        
     </div>
     
 
