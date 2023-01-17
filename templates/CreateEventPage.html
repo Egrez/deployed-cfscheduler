@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <title>
+        CS 191 Create Event Page
+    </title>
+    <style>
+        @font-face {
+            font-family: Poppins; src: url("Poppins-Regular.ttf");
+        }
+
+        @font-face {
+            font-family: Poppins_bold; src: url("Poppins-Bold.ttf");
+        }
+
+        @font-face {
+            font-family: Montserrat; src: url("Montserrat-VariableFont_wght.ttf");
+        }
+
+        @font-face {
+            font-family: Montserrat_bold; src: url("Montserrat Bold 700.ttf");
+        }
+
+        .genEventButt {
+            border-radius: 45px;
+            font-family: Poppins_bold;
+            font-size: 36px;
+            background-color: #666565;
+            color: #f2f2f2;
+            transition-duration: 0.4s;
+            width: 550px;
+            height: 65px;
+            border-color: #666565;
+            border-style: none;
+            cursor: pointer;
+            margin-left: 150px;
+            margin-top: 320px;
+            box-shadow: 0 6px 12px 0 rgba(0, 0, 0, 0.3);
+            text-align: center;
+        }
+
+        .genEventButt:hover {
+            background-color: #333333;
+            color: #F9D36D;
+        }
+
+        .leftBar {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            width: 2.3%;
+            background-color: #ffc31d;
+            position: fixed;
+            top: 0;
+            left: 0;
+            height: 100%;
+            overflow: auto;
+            box-shadow:0 6px 18px 0 rgba(0, 0, 0, 0.3), 0 6px 18px 0 rgba(0, 0, 0, 0.19);
+        }
+
+        .topBlock {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            width: 97.69%;
+            background-color: #333333;
+            position: fixed;
+            top: 0;
+            right: 0;
+            height: 0.7%;
+            transition: top 0.3s;
+        }
+
+        .footer {
+            list-style-type: none;
+            margin-bottom: -480px;
+            margin-top: 100px;
+            padding-bottom: 0;
+            width: 100%;
+            background-color: #2f2f2f;
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 17%;
+        }
+
+        .botBlock {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            width: 97.69%;
+            background-color: #333333;
+            position: fixed;
+            top: 0;
+            right: 0;
+            height: 0.7%;
+            transition: top 0.3s;
+        }
+
+        .navBar {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            width: 97.69%;
+            background-color: #413D3D;
+            position: fixed;
+            top: 7px;
+            right: 0;
+            height: 4.5%;
+            box-shadow: 0 8px 4px 0 rgba(0, 0, 0, 0.3);
+            transition: top 0.3s;
+        }
+
+        .navBar a {
+            float: left;
+            color: #f2f2f2;
+            text-align: center;
+            padding: 8px 14px;
+            text-decoration: none;
+            font-size: 19px;
+            font-weight: 500;
+            font-family: Poppins;
+            text-shadow: 1.5px 3.8px 3px #000000;
+            letter-spacing: 0.5px;
+            border-right: 1.5px solid #333333;
+        }
+
+        .navBar a:hover {
+            background-color: #333333;
+            color: #FFC31D;
+
+        }
+
+        .column {
+            float: left;
+            width: 45%;
+            padding: 10px;
+        }
+
+        .row:after {
+            content: "";
+            display: table;
+            clear: both;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        .textEvent {
+            width: 850px;
+            padding: 12px 20px;
+            height: 43px;
+            box-sizing: border-box;
+            display: block;
+            border-radius: 8px;
+            box-shadow: 2px 4px 4px 0 rgba(0, 0, 0, 0.22);
+            margin-left: 2%;
+            font-family: Poppins;
+            font-size: 25px;
+            text-overflow: ellipsis;
+        }
+
+        .passwordEvent {
+            width: 850px;
+            padding: 12px 20px;
+            height: 43px;
+            box-sizing: border-box;
+            display: block;
+            border-radius: 8px;
+            box-shadow: 2px 4px 4px 0 rgba(0, 0, 0, 0.22);
+            margin-left: -3%;
+            font-family: Poppins;
+            font-size: 25px;
+            text-overflow: ellipsis;
+        }
+
+        .footerfont {
+            color:#f2f2f2;
+            font-family: Montserrat_bold;
+            font-weight: bolder;
+            font-size: 22px ;
+        }
+
+        .label {
+            list-style-type: none;
+            padding-bottom: 0;
+            width: 250px;
+            background-color: #FFC31D;
+            position: absolute;
+            margin-top: 100px;
+            height: 75px;
+            border-radius: 30px;
+            font-family: Montserrat_bold;
+            text-align: center;
+        }
+
+        .dropdown {
+            list-style-type: none;
+            padding-top: 20px;
+            width: 300px;
+            background-color: #333333;
+            position: absolute;
+            margin-top: 200px;
+            margin-bottom: 300px;
+            height: 50px;
+            border-radius: 10px;
+            font-family: Montserrat_bold;
+            text-align: left;
+        }
+
+    </style>
+</head>
+<body>
+    <div class = "leftBar"></div> <!-- left bar -->
+
+    <div><img style = "margin-right: 0; right: 0px; position: absolute;"  src = "rightBorder.png" width="780.35px" height="350.45px"></div> <!-- triangular border -->
+
+    
+
+    <div class = "row"> <!--textboxes-->
+        <div class = "column">
+            <img style = "left: -2%; position: absolute; margin-left: 0; padding-left: 0; margin-top: -300px;" src = "bookmark-vertical.png" width = "695.35px" height = "945.35px">
+        </div>
+        <div class = "column">
+            <img id = "logo" style = "margin-top: 100px; margin-right: 200px; margin-left: 0;" src = "logo.png" width = "710.35px" height = "440.45px">
+            <div style = "left: 750px; list-style-type: none; margin-top: 60px; padding: 0; width: 63%; background-color: #F9D36D; position: absolute; height: 1%; box-shadow: 0 10px 4px 0 rgba(0, 0, 0, 0.3);"></div>        
+            <form>
+                <input style = "width: 500px; height: 80px; text-align: center; border-radius: 40px; box-shadow: 4px 6px 5px 0 rgba(0, 0, 0, 0.3); margin-top: 200px; margin-left: 200px; font-family: Poppins_bold; font-size: 40px;" placeholder = "Event Name"> <!--put placeholder here-->
+                <input class = "textEvent" style= "margin-top: 7%; font-weight: bolder;" name = "fname" value = "Timezone: Asia / Manila" readonly>
+                <input class = "textEvent" style= "margin-top: 2%; font-weight: bolder;" name = "fname" value = "Select Event Type: Multiple Inviters" readonly>
+                <input class = "textEvent" style= "margin-top: 2%; font-weight: bolder;" name = "fname" value = "Select Email Sender: testemail@cfs.up.com" readonly>
+                <input class = "textEvent" style= "margin-top: 2%; font-weight: bolder;" name = "fname" value = "Event Duration: 15 Minutes" readonly>
+            </form>
+            <div class = "label" style = "left: 1050px;" ><p style = "font-family: Montserrat_bold; margin-top: 20px; font-size: 30px; color: #413D3D; font-weight: bold;">Start time</p></div>
+            <div class = "label" style = "left: 1660px;"><p style = "font-family: Montserrat_bold; margin-top: 20px; font-size: 30px; color: #413D3D; font-weight: bold;">End time</p></div>
+            <div class = "dropdown" style = "left: 1028px; margin-bottom: 80px;"><p style = "font-family: Poppins; font-size: 30px; font-weight: bold; color: #f2f2f2; margin-top: -14px; margin-left: 27px;">9:00 AM</p></div>
+            <div class = "dropdown" style = "left: 1640px; margin-bottom: 80px;"><p style = "font-family: Poppins; font-size: 30px; font-weight: bold; color: #f2f2f2; margin-top: -14px; margin-left: 27px;">10:00 PM</p></div>
+            <button type = "button" id = "Generate Event" class = "genEventButt">Generate Event</button>
+
+        </div>
+    </div>
+
+    <div> <!--footer-->
+        <div class = "footer" style = "margin-bottom: -720px;">
+            <p class = "footerfont" style = "margin-left: 60px; margin-top: 33px;">Terms of Service</p>
+            <p class = "footerfont" style = "margin-left: 60px; margin-top: 33px;">Privacy Policy</p>
+            <p class = "footerfont" style = "margin-top: -112px; margin-left: 380px;">Contact Us:</p>
+            <p style = "color: #f2f2f2; margin-top: -11px; margin-left: 380px; font-family: Montserrat; font-size: 20px;"><i class = "fa fa-envelope"></i> CFScheduler@gmail.com</p>
+            <p style = "color: #f2f2f2; margin-top: -11px; margin-left: 380px; font-family: Montserrat; font-size: 20px;"><i class = "fa fa-map-marker" style = "size: 30px;"></i> University of the Philippines, Diliman, Quezon City</p>
+            <p class = "footerfont" style = "margin-top: 10px; margin-left: 60px;"><i class = "fa fa-copyright"></i> 2022 CF/Scheduler Team</p>
+        </div>
+    </div>
+    <div style = "left: 0; list-style-type: none; bottom: -670px; padding: 0; width: 96%; margin-left: 60px; background-color: #f2f2f2; position: absolute; height: 0.4%;"></div>
+    
+    
+
+   
+
+    <!-- navbar -->
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+        <div class = "topBlock"></div>
+        <div class = "navBar">
+            <a href="HomePage.html" styles = "transition: top 0.3s"><i class="fa fa-home"></i> Home</a>
+            <a href="#"><i class="fa fa-newspaper-o"></i> About Us</a>
+            <a href="#"><i class="fa fa-question-circle-o"></i> FAQs</a>
+        </div>
+        <div class = "botBlock"></div>
+
+    </nav>
+</body>
+</html>
