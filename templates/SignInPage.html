@@ -13,13 +13,23 @@
         <img style = "left: 18%; top: 20.1%; float: left; margin-left: 0; padding-left: 0; z-index: 1; position: relative; margin-bottom: -5%;" src = "{% static 'working-man.png' %}" width = "520px" height = "850px">
     </div>
     <div class = "column">
-        <img id = "logo" style = "margin-top: 100px; margin-right: 200px; margin-left: 0;" src = "{% static 'logo.png' %}" width = "710.35px" height = "440.45px">
-        <div style = "left: 750px; list-style-type: none; margin-top: 35px; padding: 0; width: 58%; background-color: #F9D36D; position: absolute; height: 1%; box-shadow: 0 10px 4px 0 rgba(0, 0, 0, 0.3);"></div>
-        <input style = "width: 500px; height: 80px; text-align: center; border-radius: 40px; box-shadow: 4px 6px 5px 0 rgba(0, 0, 0, 0.3); margin-top: 90px; margin-left: 114px; font-family: Poppins_bold; font-size: 40px;" placeholder = "Event Name" readonly> <!--put placeholder here-->
-        <input class = "text" style= "margin-top: 7%; font-weight: bolder;" name = "fname" value = "Email: " placeholder="cf/scheduler@gmail.com">
-        <input class = "text" style= "margin-top: 2%; font-weight: bolder;" name = "fname" value = "Name: " placeholder="Fort was here">
-        <input class = "password" style= "margin-top: 2%; font-weight: bolder;" name = "fname" value = "Password: " placeholder="*******">
-        <button class = "genButtSign" type = "button" id = "Create Event Home">Sign In</button>
+        <form action="" method="POST">
+            {% csrf_token %}
+
+            <img id = "logo" style = "margin-top: 100px; margin-right: 200px; margin-left: 0;" src = "{% static 'logo.png' %}" width = "710.35px" height = "440.45px">
+            <div style = "left: 750px; list-style-type: none; margin-top: 35px; padding: 0; width: 58%; background-color: #F9D36D; position: absolute; height: 1%; box-shadow: 0 10px 4px 0 rgba(0, 0, 0, 0.3);"></div>
+            <input style = "width: 500px; height: 80px; text-align: center; border-radius: 40px; box-shadow: 4px 6px 5px 0 rgba(0, 0, 0, 0.3); margin-top: 90px; margin-left: 114px; font-family: Poppins_bold; font-size: 40px;" placeholder = "{{ event_name }}" readonly> <!--put placeholder here-->
+            {{ form.email.errors }}
+            {{ form.email }}
+
+            {{ form.name.errors }}
+            {{ form.name }}
+
+            {{ form.password.errors }}
+            {{ form.password }}
+
+            <input type="submit" class = "genButtSign" class = "genButtSign" id = "Create Event Home" value="Sign In">
+        </form>
 
             
     </div>

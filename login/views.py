@@ -8,29 +8,30 @@ from event.models import Event
 # Create your views here.
 def signin(request, id):
     # If this is a POST request then process the Form data
-    # if request.method == 'POST':
+    if request.method == 'POST':
 
-    #     # Create a form instance and populate it with data from the request (binding):
-    #     form = LoginForm(data=request.POST)
+        # Create a form instance and populate it with data from the request (binding):
+        form = LoginForm(data=request.POST)
 
-    #     # Check if the form is valid:
-    #     if form.is_valid():
-    #         # process the data in form.cleaned_data as required (here we just write it to the model due_back field)
-    #         username = form.cleaned_data['username']
-    #         password = form.cleaned_data['password']
+        # Check if the form is valid:
+        if form.is_valid():
+            # process the data in form.cleaned_data as required (here we just write it to the model due_back field)
+            email = form.cleaned_data['email']
+            name = form.cleaned_date['name']
+            password = form.cleaned_data['password']
 
-    #             # redirect to a new URL:
-    #             #return HttpResponseRedirect(reverse('home'))
+                # redirect to a new URL:
+                #return HttpResponseRedirect(reverse('home'))
 
-    # # If this is a GET (or any other method) create the default form.
-    # else:
-    #     form = LoginForm(initial={'username': 'serge'})
+    # If this is a GET (or any other method) create the default form.
+    else:
+        form = LoginForm(initial={'name': 'serge'})
 
-    # event_name = Event.objects.get(id=id).name
+    event_name = Event.objects.get(id=id).name
     
-    # context = {
-    #     'form': form,
-    #     'event_name': event_name,
-    # }
+    context = {
+        'form': form,
+        'event_name': event_name,
+    }
 
-    return render(request, 'SignInPage.html')
+    return render(request, 'SignInPage.html', context)

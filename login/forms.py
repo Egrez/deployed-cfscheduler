@@ -1,11 +1,28 @@
 from django import forms
 
 class LoginForm(forms.Form):
-    username = forms.CharField(
+    email = forms.CharField(
         label='Username:',
         validators=[],
         widget = forms.TextInput(attrs = {
-            'class' : 'form-control w-100',
+            "class" : "text",
+            "style" : "margin-top: 7%; font-weight: bolder;",
+            "name" : "fname",
+            "value" : "Email: ",
+            "placeholder" : "cf/scheduler@gmail.com",
+        }),
+
+    )
+
+    name = forms.CharField(
+        label='Username:',
+        validators=[],
+        widget = forms.TextInput(attrs = {
+            "class" : "text",
+            "style" : "margin-top: 2%; font-weight: bolder;",
+            "name" : "fname",
+            "value" : "Name: ",
+            "placeholder" : "Fort was here",
         }),
 
     )
@@ -14,7 +31,11 @@ class LoginForm(forms.Form):
         label='Password:',
         validators=[],
         widget = forms.PasswordInput(attrs = {
-            'class' : 'form-control w-100',
+            "class" : "password",
+            "style" : "margin-top: 2%; font-weight: bolder;",
+            "name" : "fname",
+            "value" : "Password: ",
+            "placeholder" : "*******",
         }),
     )
 
