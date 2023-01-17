@@ -16,19 +16,30 @@
     <div class = "leftBar"></div>
 
     <div><img style = "margin-right: 0; right: 0px; position: absolute;"  src = "{% static 'rightBorder.png' %}" width="780.35px" height="350.45px"></div> 
-    <div style = "text-align: center; padding-bottom: 0; margin: 0; "><img id = "logo" style = "margin: 0; padding: 0;" src = "{% static 'logo.png' %}" width = "710.35px" height = "440.45px"></div>
     {% block content %}
     {% endblock %}      
 
     <nav class="navbar navbar-inverse navbar-fixed-top">
-        <div class = "topBlock"></div>
-        <div class = "navBar">
+        <div class = "topBlock" style = "z-index: 999;"></div>
+        <div class = "navBar" style = "z-index: 999;">
             <a href="{% url 'home' %}" style = "transition: top 0.3s"><i class="fa fa-home"></i> Home</a>
             <a href="#About Us" style = "transition: top 0.3s"><i class="fa fa-newspaper-o"></i> About Us</a>
             <a href="#"><i class="fa fa-question-circle-o"></i> FAQs</a>
         </div>
     </nav>
 
+    <div style> <!--footer-->
+        <div class = "footer">
+            <p class = "footerfont" style = "margin-left: 60px; margin-top: 33px;">Terms of Service</p>
+            <p class = "footerfont" style = "margin-left: 60px; margin-top: 33px;">Privacy Policy</p>
+            <p class = "footerfont" style = "margin-top: -112px; margin-left: 380px;">Contact Us:</p>
+            <p style = "color: #f2f2f2; margin-top: -11px; margin-left: 380px; font-family: Montserrat; font-size: 20px;"><i class = "fa fa-envelope"></i> CFScheduler@gmail.com</p>
+            <p style = "color: #f2f2f2; margin-top: -11px; margin-left: 380px; font-family: Montserrat; font-size: 20px;"><i class = "fa fa-map-marker" style = "size: 30px;"></i> University of the Philippines, Diliman, Quezon City</p>
+            <p class = "footerfont" style = "margin-top: 10px; margin-left: 60px;"><i class = "fa fa-copyright"></i> 2022 CF/Scheduler Team</p>
+        </div>
+        <div style = "left: -10px; list-style-type: none; padding: 0; width: 96%; margin-left: 60px; bottom: -205px; background-color: #f2f2f2; position: relative; height: 5.5px;"></div>
+    </div>
+    
 
 </body>
 </html>
