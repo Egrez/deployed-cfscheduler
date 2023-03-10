@@ -10,7 +10,81 @@
 
 <div class = "row"> <!--textboxes-->
     <div class = "column">
-        <img style = "left: -2%; position: absolute; margin-left: 0; padding-left: 0; margin-top: -300px;" src = "{% static 'bookmark-vertical.png'  %}" width = "695.35px" height = "945.35px">
+        <img style = "left: -2%; margin-left: 0; padding-left: 0; margin-top: -300px;" src = "{% static 'bookmark-vertical.png'  %}" width = "695.35px" height = "945.35px">
+        <div>&nbsp;</div> <div>&nbsp;</div> <div>&nbsp;</div> <div>&nbsp;</div> <div>&nbsp;</div> <div>&nbsp;</div> <div>&nbsp;</div>
+        <div class = "calendar" style = "font-family: Montserrat_bold; left: 20%; position: relative; width: 570px; background-color: #fff; border: 1px solid #ccc; border-radius: 5px; box-shadow: 5px 10px 10px #ccc;">
+            <div class = "month" style = "text-align: center; padding: 10px;">
+                <h2>March 2023</h2>
+            </div>
+            <table class = "days" style = "text-align: center; margin: 15px; font-size: large;" >
+                <thead>
+                    <tr>
+                        <th style="color: black; background: white; padding: 20px;">
+                            Sun</th>
+                        <th style="color: black; background: white; padding: 20px;">
+                            Mon</th>
+                        <th style="color: black; background: white; padding: 20px;">
+                            Tue</th>
+                        <th style="color: black; background: white; padding: 20px;">
+                            Wed</th>
+                        <th style="color: black; background: white; padding: 20px;">
+                            Thu</th>
+                        <th style="color: black; background: white; padding: 20px;">
+                            Fri</th>
+                        <th style="color: black; background: white; padding: 20px;">
+                            Sat</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td id="row1-col1" style = "padding: 20px;"></td>
+                        <td id="row1-col2" style = "padding: 20px;"></td>
+                        <td id="row1-col3" style = "padding: 20px;"></td>
+                        <td id="row1-col4" style = "padding: 20px;"></td>
+                        <td id="row1-col5" style = "padding: 20px;"></td>
+                        <td id="row1-col6" style = "padding: 20px;">1</td>
+                        <td id="row1-col7" style = "padding: 20px;">2</td>
+                    </tr>
+                    <tr></tr>
+                    <tr>
+                        <td id="row2-col1" style = "padding: 20px;">3</td>
+                        <td id="row2-col2" style = "padding: 20px;">4</td>
+                        <td id="row2-col3" style = "padding: 20px;">5</td>
+                        <td id="row2-col4" style = "padding: 20px;">6</td>
+                        <td id="row2-col5" style = "padding: 20px;">7</td>
+                        <td id="row2-col6" style = "padding: 20px;">8</td>
+                        <td id="row2-col7" style = "padding: 20px;">9</td>
+                    </tr>
+                    <tr>
+                        <td id="row3-col1" style = "padding: 20px;">10</td>
+                        <td id="row3-col2" style = "padding: 20px;">11</td>
+                        <td id="row3-col3" style = "padding: 20px;">12</td>
+                        <td id="row3-col4" style = "padding: 20px;">13</td>
+                        <td id="row3-col5" style = "padding: 20px;">14</td>
+                        <td id="row3-col6" style = "padding: 20px;">15</td>
+                        <td id="row3-col7" style = "padding: 20px;">16</td>
+                    </tr>
+                    <tr>
+                        <td id="row4-col1" style = "padding: 20px;">17</td>
+                        <td id="row4-col2" style = "padding: 20px;">18</td>
+                        <td id="row4-col3" style = "padding: 20px;">19</td>
+                        <td id="row4-col4" style = "padding: 20px;">20</td>
+                        <td id="row4-col5" style = "padding: 20px;">21</td>
+                        <td id="row4-col6" style = "padding: 20px;">22</td>
+                        <td id="row4-col7" style = "padding: 20px;">23</td>
+                    </tr>
+                    <tr>
+                        <td id="row5-col1" style = "padding: 20px;">24</td>
+                        <td id="row5-col2" style = "padding: 20px;">25</td>
+                        <td id="row5-col3" style = "padding: 20px;">26</td>
+                        <td id="row5-col4" style = "padding: 20px;">27</td>
+                        <td id="row5-col5" style = "padding: 20px;">28</td>
+                        <td id="row5-col6" style = "padding: 20px;">29</td>
+                        <td id="row5-col7" style = "padding: 20px;">30</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
     </div>
     <div class = "column">
         <img id = "logo" style = "margin-top: 100px; margin-right: 200px; margin-left: 0;" src = "{% static 'logo.png' %}" width = "710.35px" height = "440.45px">
@@ -33,6 +107,7 @@
 
     </div>
 </div>
+
 <div>&nbsp;</div> <div>&nbsp;</div>
 
 {% endblock %}
