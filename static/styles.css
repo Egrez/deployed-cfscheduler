@@ -316,10 +316,18 @@ html,body
     bottom: 0;
 }
 
-.month {
-    background-color: #ccc;
-    margin-left: 50%;
-    position: absolute;
-    text-align: center;
+table.days th{
+    color: black;
+    background: white;
+    padding: 20px;
 }
+
+table.days td{
+    padding: 20px;
+}
+
+table.days td:hover{
+    background-color:#F9D36D;
+}
+
 
