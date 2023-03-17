@@ -34,4 +34,4 @@ def signin(request, id):
         'event_name': event_name,
     }
 
-    return render(request, 'SignInPage.html', context)
+    return render(request, 'SigninPage.html', context) #change to SigninPage.html later
