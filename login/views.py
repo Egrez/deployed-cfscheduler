@@ -15,11 +15,12 @@ def signin(request, id):
 
         # Check if the form is valid:
         if form.is_valid():
-            # process the data in form.cleaned_data as required (here we just write it to the model due_back field)
-            email = form.cleaned_data['email']
-            name = form.cleaned_date['name']
-            password = form.cleaned_data['password']
-
+            #process the data in form.cleaned_data as required (here we just write it to the model due_back field)
+            #email = form.cleaned_data['email']
+            #name = form.cleaned_date['name']
+            #password = form.cleaned_data['password']
+            
+            return render(request, 'inviter.html')
                 # redirect to a new URL:
                 #return HttpResponseRedirect(reverse('home'))
 
