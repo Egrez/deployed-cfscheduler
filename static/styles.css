@@ -141,10 +141,10 @@ html,body
     padding: 0;
     width: 97.69%;
     background-color: #413D3D;
-    position: fixed;
+    position: absolute;
     top: 7px;
     right: 0;
-    height: 4.5%;
+    height: 4.7%;
     box-shadow: 0 8px 4px 0 rgba(0, 0, 0, 0.3);
     transition: top 0.3s;
 }
@@ -160,7 +160,7 @@ html,body
     font-family: Poppins;
     text-shadow: 1.5px 3.8px 3px #000000;
     letter-spacing: 0.5px;
-    border-right: 1.5px solid #333333;
+    border-right: 2% solid #333333;
 }
 
 .navBar a:hover {
@@ -358,6 +358,7 @@ table.days td:hover{
     width: 800px; 
     margin-top: 40%;
     height: 530px;
+    text-align: center;
 }
 
 .time_row{
@@ -405,4 +406,43 @@ table.days td:hover{
 .lockButt:hover {
     background-color: #333333;
     color: #F9D36D;
+}
+
+
+.time {
+    display: inline-block;
+    background-color: white;
+    font-family: Poppins_bold;
+    border-radius: 8px;
+    box-shadow: 2px 4px 4px 0 rgba(0, 0, 0, 0.22);
+    font-size: x-large;
+    width: 300px;
+    height: 40px;
+    outline-style: solid;
+    outline-color: black;
+    text-align: center;
+    outline-width: thin;
+    margin-left: -30px;
+    margin-right: 60px;
+    padding-top: 3px;
+}
+
+.bookButt {
+    background-color: white;
+    font-family: Poppins_bold;
+    border-radius: 8px;
+    box-shadow: 2px 4px 4px 0 rgba(0, 0, 0, 0.22);
+    font-size: large;
+    height: 40px;
+    width: 200px;
+}
+
+.bookButt:hover {
+    background-color: #333333;
+    color: #F2F2F2;
+}
+
+.bookButt:active {
+    background-color: #333333;
+    color:#FFC31D;
 }

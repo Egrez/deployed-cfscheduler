@@ -4,19 +4,15 @@
 {% load static %}
 
 {% block content %}
-<div><img style = "margin-right: 0; right: 0px; position: absolute;"  src = "{% static 'rightBorder.png' %}" width="780.35px" height="350.45px"></div> <!-- triangular border -->
-
-
-
-<div class = "row"> <!--textboxes-->
+<div><img style = "margin-right: 0; right: 0px; position: absolute; z-index: 10;"  src = "{% static 'rightBorder.png' %}" width="780.35px" height="350.45px"></div> <!-- triangular border -->
+<div class = "row">
     <div class = "column">
-        <img style = "left: -2%; margin-left: 0; padding-left: 0; margin-top: -300px;" src = "{% static 'bookmark-vertical.png'  %}" width = "695.35px" height = "945.35px">
-        <div>&nbsp;</div> <div>&nbsp;</div> <div>&nbsp;</div> <div>&nbsp;</div> <div>&nbsp;</div> <div>&nbsp;</div> <div>&nbsp;</div>
-        <div class = "calendar" style = "margin: auto;">
-            <div class = "month" style = "text-align: center; padding: 10px;">
+        <img style = "left: -2%; margin-left: 0; padding-left: 0;" src = "{% static 'logo.png'  %}" width = "510.35px" height = "320.45px">
+        <div class = "calendar" style = "margin-left: 20%;">
+            <div class = "month" style = "text-align: center; padding-top: 10px;">
                 <h2>March 2023</h2>
             </div>
-            <table class = "days" style = "text-align: center; margin: 15px; font-size: large;" >
+            <table class = "days" style = "text-align: center;margin-top: 10px; margin: 15px; font-size: large;" >
                 <thead>
                     <tr>
                         <th>
@@ -85,29 +81,35 @@
                 </tbody>
             </table>
         </div>
-    </div>
-    <div class = "column">
-        <img id = "logo" style = "margin-top: 100px; margin-right: 200px; margin-left: 0;" src = "{% static 'logo.png' %}" width = "710.35px" height = "440.45px">
-        <div style = "margin-left: -100px; list-style-type: none; margin-top: 80px; padding: 0; width: 1100px; background-color: #F9D36D; height: 10px; box-shadow: 0 10px 4px 0 rgba(0, 0, 0, 0.3);"></div>        
-        <form action="" method="POST">
-            {% csrf_token %}
-            {{ form.event_name.errors }}
-            {{ form.event_name }}
-            <input class = "textEvent" style= "margin-top: 7%; font-weight: bolder;" name = "fname" value = "Timezone: Asia / Manila" readonly>
-            <input class = "textEvent" style= "margin-top: 2%; font-weight: bolder;" name = "fname" value = "Select Event Type: Multiple Inviters" readonly>
-            <input class = "textEvent" style= "margin-top: 2%; font-weight: bolder;" name = "fname" value = "Select Email Sender: testemail@cfs.up.com" readonly>
-            <input class = "textEvent" style= "margin-top: 2%; font-weight: bolder;" name = "fname" value = "Event Duration: 15 Minutes" readonly>
+        <div>&nbsp;</div> <div>&nbsp;</div> <div>&nbsp;</div> <div>&nbsp;</div>
+        <p style = "margin-top: 5%; font-family: Poppins_bold; margin-bottom: -4px; margin-left: 20%;">To invite people to this event, you can email them, send them a Facebook message, or just direct them to https://www.cfscheduler.com/?19114005-123</p>
+        <div><img style = "margin-left: 0; right: 0px; z-index: 10; width: 100%"  src = "{% static 'bookmark-horizontal.png' %}"></div>
+    
         
-            <div class = "label" style = "left: 875px;" ><p style = "font-family: Montserrat_bold; margin-top: 20px; font-size: 30px; color: #413D3D; font-weight: bold;">Start time</p></div>
-            <div class = "label" style = "left: 1485px;"><p style = "font-family: Montserrat_bold; margin-top: 20px; font-size: 30px; color: #413D3D; font-weight: bold;">End time</p></div>
-            <div class = "dropdown" style = "left: 853px; margin-bottom: 80px;"><p style = "font-family: Poppins; font-size: 30px; font-weight: bold; color: #f2f2f2; margin-top: -14px; margin-left: 27px;">9:00 AM</p></div>
-            <div class = "dropdown" style = "left: 1465px; margin-bottom: 80px;"><p style = "font-family: Poppins; font-size: 30px; font-weight: bold; color: #f2f2f2; margin-top: -14px; margin-left: 27px;">10:00 PM</p></div>
-            <input type="submit" name="create-event" class = "genEventButt" id = "Generate Event" value="Generate Event" >
-        </form>
-
+    </div>
+    
+    <div class = "column">
+        <div style = "left: 500px; list-style-type: none; margin-top: 135px; padding: 0; width: 60%; background-color: #F9D36D; position: absolute; height: 1%; box-shadow: 0 10px 4px 0 rgba(0, 0, 0, 0.3);"></div>
+        
+        <div class = "time_stack">
+            <div>&nbsp;</div> <div>&nbsp;</div>
+            <div class = "time_row">
+                <span class = "time">01:00 - 02:00</span>
+                <input type = "button" class = "bookButt" value = "book">
+            </div>
+            <div class = "time_row">
+                <span class = "time">02:00 - 03:00</span>
+                <input type = "button" class = "bookButt" value = "book">
+            </div>
+            <div class = "time_row">
+                <span class = "time">03:00 - 04:00</span>
+                <input type = "button" class = "bookButt" value = "book">
+            </div>
+        </div>
+        <input type = "button" class = "lockButt" value = "Confirm">
+        <img src = "{% static 'robot.png' %}" style = "width: 50%; height: 50%; margin-top: 0%; margin-left: 70%; margin-bottom: -17px;">
     </div>
 </div>
 
-<div>&nbsp;</div> <div>&nbsp;</div>
 
 {% endblock %}
