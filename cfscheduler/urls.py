@@ -25,6 +25,8 @@ urlpatterns = [
 
     path('event/', include('event.urls')),
     path('', include('login.urls')),
+    path('', include('inviter.urls')),
+    path('', include('invitee.urls')),
 ]
 
 if settings.DEBUG:

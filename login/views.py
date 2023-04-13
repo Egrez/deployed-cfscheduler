@@ -20,7 +20,7 @@ def signin(request, id):
             #name = form.cleaned_date['name']
             #password = form.cleaned_data['password']
             
-            return render(request, 'invitee.html')
+            return render(request, 'inviter.html')
                 # redirect to a new URL:
                 #return HttpResponseRedirect(reverse('home'))
 
