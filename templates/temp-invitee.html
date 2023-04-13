@@ -97,21 +97,17 @@
     <div class = "column">
         <div style = "left: 500px; list-style-type: none; margin-top: 135px; padding: 0; width: 60%; background-color: #F9D36D; position: absolute; height: 1%; box-shadow: 0 10px 4px 0 rgba(0, 0, 0, 0.3);"></div>
         
-        <div class = "time_stack">
-            <div>&nbsp;</div> <div>&nbsp;</div>
-            <div class = "time_row">
-                <span class = "time">01:00 - 02:00</span>
-                <input type = "button" class = "bookButt" value = "book">
-            </div>
-            <div class = "time_row">
-                <span class = "time">02:00 - 03:00</span>
-                <input type = "button" class = "bookButt" value = "book">
-            </div>
-            <div class = "time_row">
-                <span class = "time">03:00 - 04:00</span>
-                <input type = "button" class = "bookButt" value = "book">
-            </div>
-        </div>
+        <div class = "login-stack">
+            <div>&nbsp;</div> <div>&nbsp;</div> <div>&nbsp;</div> 
+            <button class = "back-button"><i class = "fa fa-arrow-left"></i> Back</button>
+            <input type="text" name = "name" class = "text-invitee" style = "font-weight: bold;" placeholder = "Name">
+
+            <input type="text" name = "email" class = "text-invitee" style = "font-weight: bold; margin-top: 8px;" placeholder = "Email" style = "margin-top: 20px;">
+
+            <textarea name = "message" class = "invitee-message" style = "font-weight: bold;" placeholder = "Message to Inviter"></textarea>
+	</div>
+        <div>&nbsp;</div> <div>&nbsp;</div> 
+        <div class = "popup">Booking Successful! Please check your email for invites.</div>
         <input type = "button" class = "lockButt" value = "Confirm">
         <img src = "{% static 'robot.png' %}" style = "width: 50%; height: 50%; margin-top: 0%; margin-left: 70%; margin-bottom: -17px;">
     </div>
