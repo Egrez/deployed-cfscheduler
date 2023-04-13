@@ -8,13 +8,14 @@
 <div class = "row">
     <div class = "column">
         <img style = "left: -2%; margin-left: 0; padding-left: 0;" src = "{% static 'logo.png'  %}" width = "510.35px" height = "320.45px">
-        <div class = "calendar" style = "margin-left: 20%;">
+        <div class = "calendar" style = "margin-left: 10%; max-width: 690px;" >
             <div class = "month" style = "text-align: center; padding: 10px;">
                 <h2>March 2023</h2>
             </div>
             <table class = "days" style = "text-align: center; margin-top: 15px; margin: 15px; font-size: large;" >
                 <thead>
                     <tr>
+                        <th></th>
                         <th>
                             Sun</th>
                         <th>
@@ -33,6 +34,7 @@
                 </thead>
                 <tbody>
                     <tr>
+                        <td id ="month1">Apr</td>
                         <td id="row1-col1"></td>
                         <td id="row1-col2"></td>
                         <td id="row1-col3"></td>
@@ -43,6 +45,7 @@
                     </tr>
                     <tr></tr>
                     <tr>
+                        <td id ="month2">Apr/May</td>
                         <td id="row2-col1">3</td>
                         <td id="row2-col2">4</td>
                         <td id="row2-col3">5</td>
@@ -52,6 +55,7 @@
                         <td id="row2-col7">9</td>
                     </tr>
                     <tr>
+                        <td id ="month3">May</td>
                         <td id="row3-col1">10</td>
                         <td id="row3-col2">11</td>
                         <td id="row3-col3">12</td>
@@ -61,6 +65,7 @@
                         <td id="row3-col7">16</td>
                     </tr>
                     <tr>
+                        <td id ="month4">May</td>
                         <td id="row4-col1">17</td>
                         <td id="row4-col2">18</td>
                         <td id="row4-col3">19</td>
@@ -70,6 +75,7 @@
                         <td id="row4-col7">23</td>
                     </tr>
                     <tr>
+                        <td id ="month5">May</td>
                         <td id="row5-col1">24</td>
                         <td id="row5-col2">25</td>
                         <td id="row5-col3">26</td>
@@ -81,9 +87,9 @@
                 </tbody>
             </table>
         </div>
-        <p style= "margin-top: 5%; font-family: Poppins_bold; margin-left: 20%; font-size: x-large;">Meeting Details:</p>
+        <p style= "margin-top: 5%; font-family: Poppins_bold; margin-left: 10%; font-size: x-large;">Meeting Details:</p>
         <input class = "meeting_details" type = "text">
-        <p style = "margin-top: 5%; font-family: Poppins_bold; margin-left: 20%;">To invite people to this event, you can email them, send them a Facebook message, or just direct them to https://www.cfscheduler.com/?19114005-123
+        <p style = "margin-top: 5%; font-family: Poppins_bold; margin-left: 10%;">To invite people to this event, you can email them, send them a Facebook message, or just direct them to https://www.cfscheduler.com/?19114005-123
         </p>
     
         
@@ -100,9 +106,11 @@
             </div>
             <div class = "time_row">
                 <input type = "button" class = "timeButton" value = "02:00 - 03:00">
+                <span class = "name_container">Serge</span>
             </div>
             <div class = "time_row">
                 <input type = "button" class = "timeButton" value = "03:00 - 04:00">
+                <span class = "name_container">Serge</span>
             </div>
         </div>
         <input type = "button" class = "lockButt" value = "Lock Schedule">
