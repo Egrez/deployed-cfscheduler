@@ -27,7 +27,7 @@ SECRET_KEY = os.environ.get('DJANGO_SECRET_KEY', 'django-insecure-m=x_a5&!*qzqc^
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = os.environ.get('DJANGO_DEBUG', '') != 'False'
 
-# DEBUG = True
+DEBUG = True
 
 if DEBUG:
     BASE_URL = "http://localhost:8000/"
