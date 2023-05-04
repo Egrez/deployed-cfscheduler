@@ -1,11 +1,20 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
+
+from django.urls import reverse
+
+from event.models import OauthCredentials
 
 def home(request):
     return render(request, "HomePage.html")
 
+    
+scopes = ["https://www.googleapis.com/auth/calendar.events"]
+
 from googleapiclient.discovery import build
 
 import google_auth_oauthlib.flow
+
+from cfscheduler.settings import BASE_URL
 
 # permissions set for the Google App to be accessed currently it is set to view and download only
 # more permissions here https://developers.google.com/identity/protocols/oauth2/scopes
@@ -18,10 +27,10 @@ def generate_token(request):
 	flow = google_auth_oauthlib.flow.Flow.from_client_secrets_file('creds.json', scopes=SCOPES)
 
 	# URI where the oauth2's response will be redirected this must match with one of the authorized URIs configured in Google Cloud
-	flow.redirect_uri = 'http://localhost:8000/oauthcallback/'
+	flow.redirect_uri = BASE_URL + 'oauthcallback/'
 
 	# configuring the authorization url which will be used to request from oauth2
-	authorization_url, state = flow.authorization_url(include_granted_scopes='true', access_type='offline')
+	authorization_url, state = flow.authorization_url(include_granted_scopes='true')
 
 	# store the state in the session
 	request.session['state'] = state
@@ -42,7 +51,7 @@ def callback(request):
 	 'creds.json', scopes=None, state=state)
 
 	# same redirect uri as before
-	flow.redirect_uri = 'http://localhost:8000/oauthcallback/'
+	flow.redirect_uri =  BASE_URL + 'oauthcallback/'
 
 	# function call to get the credentials
 	flow.fetch_token(authorization_response=response)
