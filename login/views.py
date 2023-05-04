@@ -40,11 +40,7 @@ def signin(request, event_id):
 				return redirect(reverse('inviter', args=[event_id]))
 
 	else:
-		form = LoginForm(initial={
-			'name' : 'serge', 
-			'email' : 'sergealecrivera@gmail.com', 
-			'password' : 'secret'
-		})
+		form = LoginForm()
 		
 	context = {
 		'form' : form,

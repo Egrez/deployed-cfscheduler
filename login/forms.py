@@ -32,7 +32,6 @@ class LoginForm(forms.Form):
             "class" : "password",
             "style" : "margin-top: 2%; font-weight: bolder;",
             "name" : "fname",
-            "value" : "secret",
             "placeholder" : "Password",
         }),
     )
