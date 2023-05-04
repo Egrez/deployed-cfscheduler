@@ -10,7 +10,7 @@
         <img style = "left: -2%; margin-left: 0; padding-left: 0;" src = "{% static 'logo.png'  %}" width = "510.35px" height = "320.45px">
         <div class = "calendar" style = "margin-left: 10%; max-width: 690px;" >
             <div class = "month" style = "text-align: center; padding: 10px;">
-                <h2>March 2023</h2>
+                <h2>{{ month }} {{ year }}</h2>
             </div>
             <table class = "days" style = "text-align: center; margin-top: 15px; margin: 15px; font-size: large;" >
                 <thead>
@@ -34,55 +34,55 @@
                 </thead>
                 <tbody>
                     <tr>
-                        <td id ="month1">Apr</td>
-                        <td id="row1-col1"></td>
-                        <td id="row1-col2"></td>
-                        <td id="row1-col3"></td>
-                        <td id="row1-col4"></td>
-                        <td id="row1-col5"></td>
-                        <td id="row1-col6">1</td>
-                        <td id="row1-col7">2</td>
+                        <td id ="month1">May</td>
+                        <td id="row1-col1">{{ days.0 }}</td>
+                        <td id="row1-col2">{{ days.1 }}</td>
+                        <td id="row1-col3">{{ days.2 }}</td>
+                        <td id="row1-col4">{{ days.3 }}</td>
+                        <td id="row1-col5">{{ days.4 }}</td>
+                        <td id="row1-col6">{{ days.5 }}</td>
+                        <td id="row1-col7">{{ days.6 }}</td>
                     </tr>
                     <tr></tr>
                     <tr>
-                        <td id ="month2">Apr/May</td>
-                        <td id="row2-col1">3</td>
-                        <td id="row2-col2">4</td>
-                        <td id="row2-col3">5</td>
-                        <td id="row2-col4">6</td>
-                        <td id="row2-col5">7</td>
-                        <td id="row2-col6">8</td>
-                        <td id="row2-col7">9</td>
+                        <td id ="month2">May</td>
+                        <td id="row2-col1">{{ days.7 }}</td>
+                        <td id="row2-col2">{{ days.8 }}</td>
+                        <td id="row2-col3">{{ days.9 }}</td>
+                        <td id="row2-col4">{{ days.10 }}</td>
+                        <td id="row2-col5">{{ days.11 }}</td>
+                        <td id="row2-col6">{{ days.12 }}</td>
+                        <td id="row2-col7">{{ days.13 }}</td>
                     </tr>
                     <tr>
                         <td id ="month3">May</td>
-                        <td id="row3-col1">10</td>
-                        <td id="row3-col2">11</td>
-                        <td id="row3-col3">12</td>
-                        <td id="row3-col4">13</td>
-                        <td id="row3-col5">14</td>
-                        <td id="row3-col6">15</td>
-                        <td id="row3-col7">16</td>
+                        <td id="row3-col1">{{ days.14 }}</td>
+                        <td id="row3-col2">{{ days.15 }}</td>
+                        <td id="row3-col3">{{ days.16 }}</td>
+                        <td id="row3-col4">{{ days.17 }}</td>
+                        <td id="row3-col5">{{ days.18 }}</td>
+                        <td id="row3-col6">{{ days.19 }}</td>
+                        <td id="row3-col7">{{ days.20 }}</td>
                     </tr>
                     <tr>
                         <td id ="month4">May</td>
-                        <td id="row4-col1">17</td>
-                        <td id="row4-col2">18</td>
-                        <td id="row4-col3">19</td>
-                        <td id="row4-col4">20</td>
-                        <td id="row4-col5">21</td>
-                        <td id="row4-col6">22</td>
-                        <td id="row4-col7">23</td>
+                        <td id="row4-col1">{{ days.21 }}</td>
+                        <td id="row4-col2">{{ days.22 }}</td>
+                        <td id="row4-col3">{{ days.23 }}</td>
+                        <td id="row4-col4">{{ days.24 }}</td>
+                        <td id="row4-col5">{{ days.25 }}</td>
+                        <td id="row4-col6">{{ days.26 }}</td>
+                        <td id="row4-col7">{{ days.27 }}</td>
                     </tr>
                     <tr>
                         <td id ="month5">May</td>
-                        <td id="row5-col1">24</td>
-                        <td id="row5-col2">25</td>
-                        <td id="row5-col3">26</td>
-                        <td id="row5-col4">27</td>
-                        <td id="row5-col5">28</td>
-                        <td id="row5-col6">29</td>
-                        <td id="row5-col7">30</td>
+                        <td id="row5-col1">{{ days.28 }}</td>
+                        <td id="row5-col2">{{ days.29 }}</td>
+                        <td id="row5-col3">{{ days.30 }}</td>
+                        <td id="row5-col4">{{ days.31 }}</td>
+                        <td id="row5-col5">{{ days.32 }}</td>
+                        <td id="row5-col6">{{ days.33 }}</td>
+                        <td id="row5-col7">{{ days.34 }}</td>
                     </tr>
                 </tbody>
             </table>
@@ -97,25 +97,156 @@
     <div class = "column">
         <div style = "left: 500px; list-style-type: none; margin-top: 135px; padding: 0; width: 60%; background-color: #F9D36D; position: absolute; height: 1%; box-shadow: 0 10px 4px 0 rgba(0, 0, 0, 0.3);"></div>
         
-        <div class = "time_stack">
+        <!-- <div class = "time-stack">
             <div>&nbsp;</div> <div>&nbsp;</div>
-            <div class = "time_row">
+            <div class = "time-row">
                 <span class = "time">01:00 - 02:00</span>
                 <input type = "button" class = "bookButt" value = "book">
             </div>
-            <div class = "time_row">
+            <div class = "time-row">
                 <span class = "time">02:00 - 03:00</span>
                 <input type = "button" class = "bookButt" value = "book">
             </div>
-            <div class = "time_row">
+            <div class = "time-row">
                 <span class = "time">03:00 - 04:00</span>
                 <input type = "button" class = "bookButt" value = "book">
             </div>
+        </div> -->
+
+        <div class="time-stack">
         </div>
-        <input type = "button" class = "lockButt" value = "Confirm">
+        <input type = "button" id="confirm-button" class = "lockButt hidden" value = "Confirm Schedule" onclick="confirm()">
+
+        <div class = "login-stack hidden">
+            <div>&nbsp;</div> <div>&nbsp;</div> <div>&nbsp;</div> 
+            <button class = "back-button"><i class = "fa fa-arrow-left"></i> Back</button>
+            <form action="" method="POST">
+                {% csrf_token %}
+                {{ form.schedule_id }}
+                <div id="final-schedule"> </div>
+                <div>
+                    {{ form.name }}
+                </div>
+                <div>
+                    {{ form.email }}
+                </div>
+                <div>
+                    {{ form.message }}
+                </div>
+                {{ form.errors }}
+                {% if success %}<div>Google Calendar invites sent successfully</div>{% endif %}
+                <input type="submit" class="lockButt" value="Book Appointment">
+            </form>
+	    </div>
         <img src = "{% static 'robot.png' %}" style = "width: 50%; height: 50%; margin-top: 0%; margin-left: 70%; margin-bottom: -17px;">
     </div>
 </div>
 
+<script>
+    var today = new Date();
+    today = new Date(today.getFullYear(), today.getMonth(), today.getDate(), 8, 0, 0, 0);
+    const months = ["January","February","March","April","May","June","July","August","September","October","November","December"];
+    var year = "{{ year|escapejs }}";
 
+    var schedules = "{{ schedules|escapejs }}".split(".");
+
+    schedules = schedules.map(function(scheduleObjectString){
+        let scheduleObject = JSON.parse(scheduleObjectString);
+        return {'start' : new Date(scheduleObject['start']), 'end' : new Date(scheduleObject['end']), 'id' : scheduleObject['id'] };
+    });
+
+    let diff, col, row, calendarElement;
+    let timeStack = document.querySelector(".time-stack");
+    let loginStack = document.querySelector(".login-stack");
+
+    let confirmButton = document.querySelector("#confirm-button");
+
+    let index = 0, i = 0;
+    let containerMapping = {};
+
+    let scheduleInput = document.querySelector("#id_schedule_id");
+    let finalSchedule = document.querySelector("#final-schedule");
+    for (let schedule of schedules){
+        let start = schedule['start'];
+        let end = schedule['end'];
+        let id = schedule['id']
+
+        diff = (new Date(start.getFullYear(), start.getMonth(), start.getDate(), 8, 0, 0, 0).valueOf() - today.valueOf()) / (24 * 3600 * 1000);
+
+        row = Math.floor(diff / 7) + 1;
+        col = diff % 7 + 1; 
+        
+        calendarElement = document.querySelector("#row" + row  + "-col" + col);
+
+        calendarElement.classList.add("yellow");
+        
+        let dateString = start.toString().slice(4,15);
+        
+        let timeContainerIndex, timeContainer;
+        if (dateString in containerMapping){
+            timeContainerIndex = containerMapping[dateString];
+            timeContainer = document.querySelector("#time-container" + timeContainerIndex);
+        }
+        else{
+            containerMapping[dateString] = index;
+            timeContainer = document.createElement("div");
+            timeContainer.id = "time-container" + index;
+            timeContainer.className = "time-container";
+            timeContainer.innerHTML = dateString;
+
+            timeStack.appendChild(timeContainer);
+            index++;
+        }
+        
+        let timeRow = document.createElement("div");
+
+        let timeLabelContainer = document.createElement("span");
+        timeLabelContainer.classList.add("time");
+        timeLabelContainer.innerText = start.toString().slice(16,21) + " - " + end.toString().slice(16,21);
+
+        let bookButton = document.createElement("button");
+        bookButton.innerText = "Book appointment";
+        bookButton.value = schedule.id;
+        bookButton.type = "button";
+        bookButton.classList.add("bookButt");
+
+        timeRow.id = `row${i}-container${index}`;
+
+        timeRow.appendChild(timeLabelContainer);
+        timeRow.appendChild(bookButton);
+
+        timeContainer.appendChild(timeRow);
+
+        bookButton.addEventListener("click", function(){
+            document.querySelectorAll("button").forEach(function(button){
+                button.style = "";
+            });
+
+            confirmButton.classList.remove("hidden");
+            bookButton.style = "background-color : #333333; color:#FFC31D;";
+            scheduleInput.value = id;
+            finalSchedule.innerText = start.toString().slice(4,21) + " - " + end.toString().slice(4,21);                  
+        })
+
+        calendarElement.addEventListener("click", function(){
+            document.querySelectorAll(".time-container").forEach(
+                function(element){
+                    element.style.visibility = "hidden";
+                }
+            );
+
+            timeContainer.style.visibility = "visible";
+        })
+
+        i++;
+
+        function confirm(){
+            timeStack.classList.add("hidden");
+            confirmButton.classList.add("hidden");
+
+            loginStack.classList.remove("hidden");
+        }
+    }
+
+</script>
 {% endblock %}

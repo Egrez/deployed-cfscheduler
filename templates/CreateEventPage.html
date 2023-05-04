@@ -14,7 +14,7 @@
         <div>&nbsp;</div> <div>&nbsp;</div> <div>&nbsp;</div> <div>&nbsp;</div> <div>&nbsp;</div> <div>&nbsp;</div> <div>&nbsp;</div>
         <div class = "calendar" style = "margin-left: 10%; max-width: 690px;" >
             <div class = "month" style = "text-align: center; padding: 10px;">
-                <h2>March 2023</h2>
+                <h2>{{ month }} {{ year }}</h2>
             </div>
             <table class = "days" style = "text-align: center; margin-top: 15px; margin: 15px; font-size: large;" >
                 <thead>
@@ -37,56 +37,56 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <tr>
+                    <tr class="week">
                         <td id ="month1">Apr</td>
-                        <td id="row1-col1"></td>
-                        <td id="row1-col2"></td>
-                        <td id="row1-col3"></td>
-                        <td id="row1-col4"></td>
-                        <td id="row1-col5"></td>
-                        <td id="row1-col6">1</td>
-                        <td id="row1-col7">2</td>
+                        <td id="row1-col1">{{ days.0 }}</td>
+                        <td id="row1-col2">{{ days.1 }}</td>
+                        <td id="row1-col3">{{ days.2 }}</td>
+                        <td id="row1-col4">{{ days.3 }}</td>
+                        <td id="row1-col5">{{ days.4 }}</td>
+                        <td id="row1-col6">{{ days.5 }}</td>
+                        <td id="row1-col7">{{ days.6 }}</td>
                     </tr>
                     <tr></tr>
-                    <tr>
+                    <tr class="week">
                         <td id ="month2">Apr/May</td>
-                        <td id="row2-col1">3</td>
-                        <td id="row2-col2">4</td>
-                        <td id="row2-col3">5</td>
-                        <td id="row2-col4">6</td>
-                        <td id="row2-col5">7</td>
-                        <td id="row2-col6">8</td>
-                        <td id="row2-col7">9</td>
+                        <td id="row2-col1">{{ days.7 }}</td>
+                        <td id="row2-col2">{{ days.8 }}</td>
+                        <td id="row2-col3">{{ days.9 }}</td>
+                        <td id="row2-col4">{{ days.10 }}</td>
+                        <td id="row2-col5">{{ days.11 }}</td>
+                        <td id="row2-col6">{{ days.12 }}</td>
+                        <td id="row2-col7">{{ days.13 }}</td>
                     </tr>
-                    <tr>
+                    <tr class="week">
                         <td id ="month3">May</td>
-                        <td id="row3-col1">10</td>
-                        <td id="row3-col2">11</td>
-                        <td id="row3-col3">12</td>
-                        <td id="row3-col4">13</td>
-                        <td id="row3-col5">14</td>
-                        <td id="row3-col6">15</td>
-                        <td id="row3-col7">16</td>
+                        <td id="row3-col1">{{ days.14 }}</td>
+                        <td id="row3-col2">{{ days.15 }}</td>
+                        <td id="row3-col3">{{ days.16 }}</td>
+                        <td id="row3-col4">{{ days.17 }}</td>
+                        <td id="row3-col5">{{ days.18 }}</td>
+                        <td id="row3-col6">{{ days.19 }}</td>
+                        <td id="row3-col7">{{ days.20 }}</td>
                     </tr>
-                    <tr>
+                    <tr class="week">
                         <td id ="month4">May</td>
-                        <td id="row4-col1">17</td>
-                        <td id="row4-col2">18</td>
-                        <td id="row4-col3">19</td>
-                        <td id="row4-col4">20</td>
-                        <td id="row4-col5">21</td>
-                        <td id="row4-col6">22</td>
-                        <td id="row4-col7">23</td>
+                        <td id="row4-col1">{{ days.21 }}</td>
+                        <td id="row4-col2">{{ days.22 }}</td>
+                        <td id="row4-col3">{{ days.23 }}</td>
+                        <td id="row4-col4">{{ days.24 }}</td>
+                        <td id="row4-col5">{{ days.25 }}</td>
+                        <td id="row4-col6">{{ days.26 }}</td>
+                        <td id="row4-col7">{{ days.27 }}</td>
                     </tr>
-                    <tr>
+                    <tr class="week">
                         <td id ="month5">May</td>
-                        <td id="row5-col1">24</td>
-                        <td id="row5-col2">25</td>
-                        <td id="row5-col3">26</td>
-                        <td id="row5-col4">27</td>
-                        <td id="row5-col5">28</td>
-                        <td id="row5-col6">29</td>
-                        <td id="row5-col7">30</td>
+                        <td id="row5-col1">{{ days.28 }}</td>
+                        <td id="row5-col2">{{ days.29 }}</td>
+                        <td id="row5-col3">{{ days.30 }}</td>
+                        <td id="row5-col4">{{ days.31 }}</td>
+                        <td id="row5-col5">{{ days.32 }}</td>
+                        <td id="row5-col6">{{ days.33 }}</td>
+                        <td id="row5-col7">{{ days.34 }}</td>
                     </tr>
                 </tbody>
             </table>
@@ -102,18 +102,214 @@
             <input class = "textEvent" style= "margin-top: 7%; font-weight: bolder;" name = "fname" value = "Timezone: Asia / Manila" readonly>
             <input class = "textEvent" style= "margin-top: 2%; font-weight: bolder;" name = "fname" value = "Select Event Type: Multiple Inviters" readonly>
             <input class = "textEvent" style= "margin-top: 2%; font-weight: bolder;" name = "fname" value = "Select Email Sender: testemail@cfs.up.com" readonly>
-            <input class = "textEvent" style= "margin-top: 2%; font-weight: bolder;" name = "fname" value = "Event Duration: 15 Minutes" readonly>
+            {{ form.duration }}
+            <!-- <input class = "textEvent" style= "margin-top: 2%; font-weight: bolder;" name = "fname" value = "Event Duration: 15 Minutes" readonly> -->
         
             <div class = "label" style = "left: 875px;" ><p style = "font-family: Montserrat_bold; margin-top: 20px; font-size: 30px; color: #413D3D; font-weight: bold;">Start time</p></div>
             <div class = "label" style = "left: 1485px;"><p style = "font-family: Montserrat_bold; margin-top: 20px; font-size: 30px; color: #413D3D; font-weight: bold;">End time</p></div>
-            <div class = "dropdown" style = "left: 853px; margin-bottom: 80px;"><p style = "font-family: Poppins; font-size: 30px; font-weight: bold; color: #f2f2f2; margin-top: -14px; margin-left: 27px;">9:00 AM</p></div>
-            <div class = "dropdown" style = "left: 1465px; margin-bottom: 80px;"><p style = "font-family: Poppins; font-size: 30px; font-weight: bold; color: #f2f2f2; margin-top: -14px; margin-left: 27px;">10:00 PM</p></div>
-            <input type="submit" name="create-event" class = "genEventButt" id = "Generate Event" value="Generate Event" >
+            {{ form.start_time }}
+            {{ form.end_time }}
+            <!-- <div class = "dropdown" style = "left: 853px; margin-bottom: 80px;"><p style = "font-family: Poppins; font-size: 30px; font-weight: bold; color: #f2f2f2; margin-top: -14px; margin-left: 27px;">9:00 AM</p></div>
+            <div class = "dropdown" style = "left: 1465px; margin-bottom: 80px;"><p style = "font-family: Poppins; font-size: 30px; font-weight: bold; color: #f2f2f2; margin-top: -14px; margin-left: 27px;">10:00 PM</p></div> -->
+
+            {{ form.datecount }}
+
+            <input type="button" class = "genEventButt" id = "Generate Event" value="Generate Event" onclick="customSubmit()">
         </form>
 
     </div>
 </div>
 
 <div>&nbsp;</div> <div>&nbsp;</div>
+
+		<script>
+
+			var today = new Date();
+			today = new Date(today.getFullYear(), today.getMonth(), today.getDate(), 0, 0, 0, 0);
+
+			var dates = document.querySelectorAll(".week td:nth-child(n+2)");		// dates
+
+            dates.forEach(function(element){
+                element.classList.add("white");
+            })
+
+            console.log(dates)
+
+			var hover = false;		// state if hovering
+			var addDate = false;	// state if adding dates
+
+			var col = -1;
+			var row = -1;
+
+			var startCol = -1;
+			var startRow = -1;
+
+			// loop through all dates and add event handlers
+			for (let i = 0; i < dates.length; i++){
+				const child = dates[i];
+				let temp = new Date(today);
+				temp.setDate(temp.getDate() + i);
+			
+				// handler for click
+				child.addEventListener("mousedown", (event) => {
+                    console.log("hi")
+					hover = true;
+					
+					startCol = parseInt(child.id[8]);
+					startRow = parseInt(child.id[3]);
+
+					col = child.id[8];
+					row = child.id[3];
+
+					if (child.classList.contains("white")){
+						addDate = true;
+						child.classList.add("yellow-expand");
+					}
+					else{
+						addDate = false;
+						child.classList.add("white-expand");
+					}
+				})
+
+				// handler after click
+				child.addEventListener("mouseup", (event) => {
+					hover = false;
+					if (addDate){
+						document.querySelectorAll(".yellow-expand").forEach(
+							function(element){
+								element.classList.remove("yellow-expand");
+								element.classList.remove("white");
+							}
+						);
+
+						recolor(row, col, "yellow");
+					}
+					else{
+						document.querySelectorAll(".white-expand").forEach(
+							function(element){
+								element.classList.remove("white-expand");
+								element.classList.remove("yellow");
+							}
+						);
+						recolor(row, col, "white")
+					}
+				})
+
+				// handler for moving 
+				child.addEventListener("mousemove", (event) => {
+					let prevCol = col;
+					let prevRow = row;
+
+					col = parseInt(child.id[8]);
+					row = parseInt(child.id[3]);
+
+					if(hover && (prevCol != col || prevRow != row)){
+						if (addDate){
+							document.querySelectorAll(".yellow-expand").forEach(
+								function(element){
+									element.classList.remove("yellow-expand");
+								}
+							);
+							recolor(row, col, "yellow-expand");	
+						}
+						else{
+							document.querySelectorAll(".white-expand").forEach(
+								function(element){
+									element.classList.remove("white-expand");
+								}
+							);
+							recolor(row, col, "white-expand")
+						}
+					}
+				})
+			}
+
+
+			// handler after click
+			document.body.addEventListener("mouseup", (event) => {
+				if (hover == true){
+					hover = false;
+					if (addDate){
+						document.querySelectorAll(".yellow-expand").forEach(
+							function(element){
+								element.classList.remove("yellow-expand");
+								element.classList.remove("white");
+							}
+						);
+						recolor(row, col, "yellow");
+					}
+					else{
+						document.querySelectorAll(".white-expand").forEach(
+							function(element){
+								element.classList.remove("white-expand");
+								element.classList.remove("yellow");
+							}
+						);
+						recolor(row, col, "white")
+					}
+				}
+			});
+
+			function recolor(row, col, className){
+				let i, j, maxi, maxj;
+				let color;
+
+				if(startCol < col){
+					j = startCol;
+					maxj = col;
+				}
+				else{
+					j = col;
+					maxj = startCol;
+				}
+
+
+				if(startRow < row){
+					i = startRow;
+					maxi = row;
+				}
+				else{
+					i = row;
+					maxi = startRow;
+				}
+
+				for(; i <= maxi; i++){
+					temp = j; 
+					for (; j <= maxj; j++){
+						color = document.querySelector("#row" + i  + "-col" + j);
+						color.classList.add(className);
+					}
+					j = temp;
+				}
+			}
+
+			// post request but with the dates as hidden inputs 
+			function customSubmit(){
+				var form = document.querySelector("form");
+				var yellowElements = document.querySelectorAll(".yellow");
+        
+        		let i = 0;
+        		let date;
+				for (object of yellowElements){
+					col = object.id[8];
+					row = object.id[3];
+					
+					newInput = document.createElement("input");
+					newInput.setAttribute("type", "hidden");
+					newInput.setAttribute("name", "date_" + i);
+
+          			date = new Date(today.valueOf() + ((col - 1) * 24*3600*1000) + ((row - 1) * 7*24*3600*1000));
+
+					newInput.setAttribute("value", `${date.getDate()}-${date.getMonth() + 1}-${date.getFullYear()}`);
+
+					form.appendChild(newInput);
+          			i++;
+				}
+
+        		document.querySelector("#id_datecount").setAttribute("value", i);
+				
+				form.submit();
+			}
+		</script>
 
 {% endblock %}
