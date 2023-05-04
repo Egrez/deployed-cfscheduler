@@ -27,7 +27,7 @@ def generate_token(request):
 	flow = google_auth_oauthlib.flow.Flow.from_client_secrets_file('creds.json', scopes=SCOPES)
 
 	# URI where the oauth2's response will be redirected this must match with one of the authorized URIs configured in Google Cloud
-	flow.redirect_uri = BASE_URL + 'oauthcallback/'
+	flow.redirect_uri = "https://deployed-cfscheduler-production.up.railway.app/" + 'oauthcallback/'
 
 	# configuring the authorization url which will be used to request from oauth2
 	authorization_url, state = flow.authorization_url(include_granted_scopes='true', access_type='offline')
@@ -51,7 +51,7 @@ def callback(request):
 	 'creds.json', scopes=None, state=state)
 
 	# same redirect uri as before
-	flow.redirect_uri =  BASE_URL + 'oauthcallback/'
+	flow.redirect_uri =  "https://deployed-cfscheduler-production.up.railway.app/" + 'oauthcallback/'
 
 	# function call to get the credentials
 	flow.fetch_token(authorization_response=response)
