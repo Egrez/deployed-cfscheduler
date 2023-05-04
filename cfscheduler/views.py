@@ -30,7 +30,7 @@ def generate_token(request):
 	flow.redirect_uri = "https://deployed-cfscheduler-production.up.railway.app/" + 'oauthcallback/'
 
 	# configuring the authorization url which will be used to request from oauth2
-	authorization_url, state = flow.authorization_url(include_granted_scopes='true', access_type='offline')
+	authorization_url, state = flow.authorization_url(include_granted_scopes='true')
 
 	# store the state in the session
 	request.session['state'] = state
