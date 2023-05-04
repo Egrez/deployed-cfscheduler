@@ -41,7 +41,7 @@ def generate_token(request):
 # callback used to extract the credentials. this will have a URL with query parameters set to the necessary arguments to extract the credentials e.g. http://localhost/oauthcallback/?state=K15TtnzoBKKepgg0Z3Ph86nEgGiubM&code=4%2F0AWgavdeDqFt44lGsb24OidcJrpSeLUja1OZkhfHNgNsacb00BrKgyeA-6pY7Uw08lt7s9g&scope=https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fdrive.readonly+https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fspreadsheets
 def callback(request):
 	# get URL of the callback
-	response = request.get_full_path()
+	response = request.build_absolute_uri()
 
 	# extract the state stored from the home view
 	state = request.session['state']
@@ -54,7 +54,7 @@ def callback(request):
 	flow.redirect_uri =  "https://deployed-cfscheduler-production.up.railway.app/" + 'oauthcallback/'
 
 	# function call to get the credentials
-	flow.fetch_token(authorization_response=request)
+	flow.fetch_token(authorization_response=response)
 
 	# store the fetched credentials
 	credentials = flow.credentials
