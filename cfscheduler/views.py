@@ -30,7 +30,7 @@ def generate_token(request):
 	flow.redirect_uri = BASE_URL + 'oauthcallback/'
 
 	# configuring the authorization url which will be used to request from oauth2
-	authorization_url, state = flow.authorization_url(include_granted_scopes='true')
+	authorization_url, state = flow.authorization_url(include_granted_scopes='true', access_type='offline')
 
 	# store the state in the session
 	request.session['state'] = state
