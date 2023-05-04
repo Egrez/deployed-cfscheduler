@@ -8,8 +8,7 @@ class LoginForm(forms.Form):
             "class" : "text",
             "style" : "margin-top: 7%; font-weight: bolder;",
             "name" : "fname",
-            "value" : "Email: ",
-            "placeholder" : "cf/scheduler@gmail.com",
+            "placeholder" : "Email",
         }),
 
     )
@@ -21,8 +20,7 @@ class LoginForm(forms.Form):
             "class" : "text",
             "style" : "margin-top: 2%; font-weight: bolder;",
             "name" : "fname",
-            "value" : "Name: ",
-            "placeholder" : "Fort was here",
+            "placeholder" : "Username",
         }),
 
     )
@@ -34,8 +32,8 @@ class LoginForm(forms.Form):
             "class" : "password",
             "style" : "margin-top: 2%; font-weight: bolder;",
             "name" : "fname",
-            "value" : "Password: ",
-            "placeholder" : "*******",
+            "value" : "secret",
+            "placeholder" : "Password",
         }),
     )
 

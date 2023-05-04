@@ -3,5 +3,5 @@ from django.urls import path
 from . import views
 
 urlpatterns = [
-    path('inviter/', views.inviter, name='inviter'),
+    path('<str:event_id>/inviter/', views.inviter, name='inviter'),
 ]

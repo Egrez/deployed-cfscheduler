@@ -3,5 +3,5 @@ from django.urls import path
 from . import views
 
 urlpatterns = [
-    path('<str:id>/login/', views.signin, name='login'),
+    path('<str:event_id>/login/', views.signin, name='signin'),
 ]
