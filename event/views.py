@@ -66,7 +66,10 @@ def event(request):
 
 	# If this is a GET (or any other method) create the default form.
 	else:
-		form = CalendarForm()
+		form = CalendarForm(initial={
+				'start_time': '08:00', 
+				'end_time': '20:00',
+			})
 	
 	
 	context = {
