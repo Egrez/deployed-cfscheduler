@@ -55,7 +55,7 @@ class CalendarForm(forms.Form):
 	duration = forms.IntegerField(
         label = "Duration",
         widget = forms.TextInput(attrs= {
-        "placeholder" : "Event Duration",
+        "placeholder" : "Event Duration (minutes)",
         "type" : "integer",
         "class" : "textEvent",
         "style" : "margin-top: 2%; font-weight: bolder;",
