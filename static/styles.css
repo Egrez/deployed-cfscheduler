@@ -321,13 +321,28 @@ table.days th{
 
 table.days td{
     padding: 20px;
+    cursor: pointer;
+    user-select: none;
 }
 
-table.days td:hover{
+.yellow{
     background-color:#F9D36D;
 }
 
-.timeButton {
+.white{
+    background-color: white;
+}
+
+.yellow-expand {
+    background-color:#F9D36D;
+}
+
+.white-expand {
+    background-color: white;
+}
+
+.time-button {
+    display: inline-block;
     background-color: white;
     font-family: Poppins_bold;
     border-radius: 8px;
@@ -337,17 +352,8 @@ table.days td:hover{
     height: 40px;
 }
 
-.timeButton:hover{
-    background-color: #666565;
-    color: #F9D36D;
-}
 
-.timeButton:active{
-    background-color: #333333;
-    color:#FFC31D;
-}
-
-.time_stack{
+.time-stack{
     background-color: #F9D36D; 
     outline-style: solid;
     outline-color: black;
@@ -359,25 +365,35 @@ table.days td:hover{
     text-align: center;
 }
 
-.time_row{
+.time-container{
+    visibility: hidden;
+    position: absolute;
+    width: 800px; 
+}
+
+.hidden {
+    display: none;
+}
+
+.time-row{
     padding-left: 20px;
     padding-bottom: 10px;
     padding-top: 10px;
 }
 
-.name_container{
+.name-container{
     display: inline-block;
-    width: 60%;
+    width: 400px;
+    height: 31px;
     margin-left: 4%;
     padding-left: 20px;
-    padding-top: 5px;
-    padding-bottom: 2px;
     font-family: Poppins;
     outline-style: solid;
     outline-color: black;
     outline-width: thin;
     background-color: white;
     border-radius: 5px;
+    vertical-align:top;
 }
 
 .meeting_details{
@@ -397,7 +413,7 @@ table.days td:hover{
     background-color: #666565;
     color: #f2f2f2;
     font-size: 30px;
-    width: 273px;
+    width: 303px;
     height: 76px;
 }
 
@@ -438,11 +454,6 @@ table.days td:hover{
 .bookButt:hover {
     background-color: #333333;
     color: #F2F2F2;
-}
-
-.bookButt:active {
-    background-color: #333333;
-    color:#FFC31D;
 }
 
 .text-invitee {
