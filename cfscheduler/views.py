@@ -54,7 +54,7 @@ def callback(request):
 	flow.redirect_uri =  "https://deployed-cfscheduler-production.up.railway.app/" + 'oauthcallback/'
 
 	# function call to get the credentials
-	flow.fetch_token(authorization_response=response)
+	flow.fetch_token(authorization_response=request)
 
 	# store the fetched credentials
 	credentials = flow.credentials
