@@ -24,15 +24,15 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = os.environ.get('DJANGO_SECRET_KEY', 'django-insecure-m=x_a5&!*qzqc^untds6f1gf-wt$f8^@5)x@zc8mywit8$y47@')
 
-# # SECURITY WARNING: don't run with debug turned on in production!
-# DEBUG = os.environ.get('DJANGO_DEBUG', '') != 'False'
+# SECURITY WARNING: don't run with debug turned on in production!
+DEBUG = os.environ.get('DJANGO_DEBUG', '') != 'False'
 
-DEBUG = True
+# DEBUG = True
 
 # if DEBUG:
 #     BASE_URL = "http://localhost:8000/"
 # else:
-    # BASE_URL = "https://deployed-cfscheduler-production.up.railway.app/"
+#     BASE_URL = "https://deployed-cfscheduler-production.up.railway.app/"
 
 BASE_URL = "https://deployed-cfscheduler-production.up.railway.app/"
 
