@@ -51,4 +51,4 @@ def signin(request, event_id):
         'event_name' : event.name,
 	}
 
-	return render(request, "SigninPage.html", context=context)
+	return render(request, "SignInPage.html", context=context)

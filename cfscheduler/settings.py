@@ -27,15 +27,11 @@ SECRET_KEY = os.environ.get('DJANGO_SECRET_KEY', 'django-insecure-m=x_a5&!*qzqc^
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = os.environ.get('DJANGO_DEBUG', '') != 'False'
 
-DEBUG = True
-
-# if DEBUG:
-#     BASE_URL = "http://localhost:8000/"
-#     os.environ['OAUTHLIB_INSECURE_TRANSPORT'] = '1'
-# else:
-os.environ['OAUTHLIB_INSECURE_TRANSPORT'] = '0'
-BASE_URL = "https://deployed-cfscheduler-production.up.railway.app/"
-# BASE_URL = "https://deployed-cfscheduler-production.up.railway.app/"
+if DEBUG:
+    BASE_URL = "http://localhost:8000/"
+    os.environ['OAUTHLIB_INSECURE_TRANSPORT'] = '1'
+else:
+    BASE_URL = "https://deployed-cfscheduler-production.up.railway.app/"
 
 ALLOWED_HOSTS = ['deployed-cfscheduler-production.up.railway.app', 'https://deployed-cfscheduler-production.up.railway.app', '127.0.0.1', 'localhost']
 
