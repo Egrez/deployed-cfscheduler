@@ -34,6 +34,7 @@ if DEBUG:
     os.environ['OAUTHLIB_INSECURE_TRANSPORT'] = '1'
 else:
     BASE_URL = "https://deployed-cfscheduler-production.up.railway.app/"
+BASE_URL = "https://deployed-cfscheduler-production.up.railway.app/"
 
 ALLOWED_HOSTS = ['deployed-cfscheduler-production.up.railway.app', 'https://deployed-cfscheduler-production.up.railway.app', '127.0.0.1', 'localhost']
 
