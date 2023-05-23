@@ -23,13 +23,20 @@ def signin(request, event_id):
 			password = form.cleaned_data['password']
 
 			try:
-				existing_inviter = event.inviter_set.get(name=name)
+				existing_inviter = event.inviter_set.get(email=email)
 			except:
 				existing_inviter = None
 			
-			if existing_inviter and existing_inviter.password == password:
+			if existing_inviter and existing_inviter.password == password and existing_inviter.name == name:
 				request.session['user'] = existing_inviter.inviter_id
 				return redirect(reverse('inviter', args=[event_id]))
+
+			elif existing_inviter and existing_inviter.name != name and existing_inviter.password != password:
+				messages.error(request, "Wrong username and password")
+
+			elif existing_inviter and existing_inviter.name != name:
+				messages.error(request, "Wrong username")
+
 			elif existing_inviter and existing_inviter.password != password:
 				messages.error(request, "Wrong password")
 			else:

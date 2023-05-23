@@ -1,4 +1,6 @@
-from django.shortcuts import render, get_object_or_404
+from django.shortcuts import render, get_object_or_404, redirect
+from django.urls import reverse
+from django.contrib import messages
 
 from event.models import Event
 from inviter.models import Schedule
@@ -11,42 +13,62 @@ import json
 import datetime
 
 def invitee(request, share_id):
-	event = get_object_or_404(Event, share_id=share_id)
-
-	inviters = event.inviter_set.all()
-
 	if (request.method == "POST"):
 		form = BookingForm(data=request.POST)
 
 		if form.is_valid():
-			schedule_id = form.cleaned_data["schedule_id"]
-			name = form.cleaned_data["name"]
-			invitee_email = form.cleaned_data["email"]
-			message = form.cleaned_data["message"]
+			event = get_object_or_404(Event, share_id=share_id)
 
-			schedule = Schedule.objects.get(schedule_id=schedule_id)
+			inviters = event.inviter_set.all()
+			if request.session["counter"] == event.counter:
+				event.counter = (event.counter + 1) % len(inviters)
 
-			schedule.is_booked = True 
-			schedule.save()
+				event.save()
 
-			invitee = Invitee(schedule=schedule, name=name, email=invitee_email, message=message)
-			invitee.save()
+				schedule_id = form.cleaned_data["schedule_id"]
+				name = form.cleaned_data["name"]
+				invitee_email = form.cleaned_data["email"]
+				message = form.cleaned_data["message"]
 
-			inviter = schedule.inviter
+				schedule = Schedule.objects.get(schedule_id=schedule_id)
 
-			send_invites(event.name, invitee, inviter, schedule.start_datetime.isoformat(), schedule.end_datetime.isoformat())
+				schedule.is_booked = True 
+				schedule.save()
 
-			schedules = []
-			
-			success = 1
+				invitee = Invitee(schedule=schedule, name=name, email=invitee_email, message=message)
+				invitee.save()
+
+				inviter = schedule.inviter
+
+				send_invites(event.name, invitee, inviter, schedule.start_datetime.isoformat(), schedule.end_datetime.isoformat())
+
+				schedules = []
+				
+				success = 1
+
+				
+			else:
+				schedules = []
+				
+				success = 0
+
+				messages.error(request, "Failed to send Google Calendar invites kindly refresh the page.")
+
+				return redirect(reverse('invitee', args=[share_id]))
+
+		
 	else:
+
+		event = get_object_or_404(Event, share_id=share_id)
+
+		request.session["counter"] = event.counter
+
+		inviters = event.inviter_set.all()
+
+
 		success = 0
 
 		form = BookingForm()		
-
-		event.counter = (event.counter + 1) % len(inviters)
-
-		event.save()
 
 		inviter = inviters[event.counter]
 
