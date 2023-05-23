@@ -33,57 +33,6 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <tr>
-                        <td id ="month1">May</td>
-                        <td id="row1-col1">{{ days.0 }}</td>
-                        <td id="row1-col2">{{ days.1 }}</td>
-                        <td id="row1-col3">{{ days.2 }}</td>
-                        <td id="row1-col4">{{ days.3 }}</td>
-                        <td id="row1-col5">{{ days.4 }}</td>
-                        <td id="row1-col6">{{ days.5 }}</td>
-                        <td id="row1-col7">{{ days.6 }}</td>
-                    </tr>
-                    <tr></tr>
-                    <tr>
-                        <td id ="month2">May</td>
-                        <td id="row2-col1">{{ days.7 }}</td>
-                        <td id="row2-col2">{{ days.8 }}</td>
-                        <td id="row2-col3">{{ days.9 }}</td>
-                        <td id="row2-col4">{{ days.10 }}</td>
-                        <td id="row2-col5">{{ days.11 }}</td>
-                        <td id="row2-col6">{{ days.12 }}</td>
-                        <td id="row2-col7">{{ days.13 }}</td>
-                    </tr>
-                    <tr>
-                        <td id ="month3">May</td>
-                        <td id="row3-col1">{{ days.14 }}</td>
-                        <td id="row3-col2">{{ days.15 }}</td>
-                        <td id="row3-col3">{{ days.16 }}</td>
-                        <td id="row3-col4">{{ days.17 }}</td>
-                        <td id="row3-col5">{{ days.18 }}</td>
-                        <td id="row3-col6">{{ days.19 }}</td>
-                        <td id="row3-col7">{{ days.20 }}</td>
-                    </tr>
-                    <tr>
-                        <td id ="month4">May</td>
-                        <td id="row4-col1">{{ days.21 }}</td>
-                        <td id="row4-col2">{{ days.22 }}</td>
-                        <td id="row4-col3">{{ days.23 }}</td>
-                        <td id="row4-col4">{{ days.24 }}</td>
-                        <td id="row4-col5">{{ days.25 }}</td>
-                        <td id="row4-col6">{{ days.26 }}</td>
-                        <td id="row4-col7">{{ days.27 }}</td>
-                    </tr>
-                    <tr>
-                        <td id ="month5">May</td>
-                        <td id="row5-col1">{{ days.28 }}</td>
-                        <td id="row5-col2">{{ days.29 }}</td>
-                        <td id="row5-col3">{{ days.30 }}</td>
-                        <td id="row5-col4">{{ days.31 }}</td>
-                        <td id="row5-col5">{{ days.32 }}</td>
-                        <td id="row5-col6">{{ days.33 }}</td>
-                        <td id="row5-col7">{{ days.34 }}</td>
-                    </tr>
                 </tbody>
             </table>
         </div>
@@ -115,6 +64,14 @@
 
         <div class="time-stack">
         </div>
+        {% if success %}<div>Google Calendar invites sent successfully</div>{% endif %}
+        {% if messages %}
+        <ul class="messages">
+            {% for message in messages %}
+            <li{% if message.tags %} class="{{ message.tags }}"{% endif %}> {{ message }} </li>
+            {% endfor %}
+        </ul>
+        {% endif %}
         <input type = "button" id="confirm-button" class = "lockButt hidden" value = "Confirm Schedule" onclick="confirm()">
 
         <div class = "login-stack hidden">
@@ -134,7 +91,6 @@
                     {{ form.message }}
                 </div>
                 {{ form.errors }}
-                {% if success %}<div>Google Calendar invites sent successfully</div>{% endif %}
                 <input type="submit" class="lockButt" value="Book Appointment">
             </form>
 	    </div>
@@ -155,6 +111,34 @@
         return {'start' : new Date(scheduleObject['start']), 'end' : new Date(scheduleObject['end']), 'id' : scheduleObject['id'] };
     });
 
+    var tBody = document.querySelector("tbody");
+
+    let dates = []
+    let counter = 0;
+    let blanks = 0;
+    let date = new Date(today.getFullYear(), today.getMonth(), today.getDate(), 0, 0, 0, 0);
+    for (let row = 1; row < 6; row++){
+        let week = tBody.appendChild(document.createElement("tr"));
+        week.classList.add("week");
+        let month = week.appendChild(document.createElement("td"));
+        month.classList.add("month")
+        month.innerText = date.toString().slice(4, 7)
+        for (let col = 1; col < 8; col++){
+            let day = week.appendChild(document.createElement("td"));
+            day.id = "row" +  row + "-col" + col;
+
+            if (col - 1 !== date.getDay()){
+                blanks++
+                day.classList.add("blank")
+                continue;
+            }
+            day.innerText = date.getDate();
+
+            dates.push(day);
+            date.setDate(date.getDate() + 1);
+        }
+    }
+
     let diff, col, row, calendarElement;
     let timeStack = document.querySelector(".time-stack");
     let loginStack = document.querySelector(".login-stack");
@@ -174,7 +158,7 @@
         diff = (new Date(start.getFullYear(), start.getMonth(), start.getDate(), 8, 0, 0, 0).valueOf() - today.valueOf()) / (24 * 3600 * 1000);
 
         row = Math.floor(diff / 7) + 1;
-        col = diff % 7 + 1; 
+        col = diff % 7 + 1 + blanks; 
         
         calendarElement = document.querySelector("#row" + row  + "-col" + col);
 
@@ -226,6 +210,16 @@
             bookButton.style = "background-color : #333333; color:#FFC31D;";
             scheduleInput.value = id;
             finalSchedule.innerText = start.toString().slice(4,21) + " - " + end.toString().slice(4,21);                  
+        })
+
+        let backButton = document.querySelector(".back-button");
+        backButton.addEventListener("click", () => {
+            document.querySelectorAll("button").forEach(function(button){
+                button.style = "";
+            });
+
+            timeStack.classList.remove("hidden");
+            loginStack.classList.add("hidden");
         })
 
         calendarElement.addEventListener("click", function(){

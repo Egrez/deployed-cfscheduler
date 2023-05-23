@@ -28,7 +28,14 @@
 
             {{ form.password.errors }}
             {{ form.password }}
-            <a href = "inviter.html">
+            
+            {% if messages %}
+            <ul class="messages">
+                {% for message in messages %}
+                <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
+                {% endfor %}
+            </ul>
+            {% endif %}
             <input type="submit" class = "genButtSign" class = "genButtSign" id = "Create Event Home" value="Sign In">
             </a>
         </form>

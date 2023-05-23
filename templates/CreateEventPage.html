@@ -37,57 +37,6 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <tr class="week">
-                        <td id ="month1">Apr</td>
-                        <td id="row1-col1">{{ days.0 }}</td>
-                        <td id="row1-col2">{{ days.1 }}</td>
-                        <td id="row1-col3">{{ days.2 }}</td>
-                        <td id="row1-col4">{{ days.3 }}</td>
-                        <td id="row1-col5">{{ days.4 }}</td>
-                        <td id="row1-col6">{{ days.5 }}</td>
-                        <td id="row1-col7">{{ days.6 }}</td>
-                    </tr>
-                    <tr></tr>
-                    <tr class="week">
-                        <td id ="month2">Apr/May</td>
-                        <td id="row2-col1">{{ days.7 }}</td>
-                        <td id="row2-col2">{{ days.8 }}</td>
-                        <td id="row2-col3">{{ days.9 }}</td>
-                        <td id="row2-col4">{{ days.10 }}</td>
-                        <td id="row2-col5">{{ days.11 }}</td>
-                        <td id="row2-col6">{{ days.12 }}</td>
-                        <td id="row2-col7">{{ days.13 }}</td>
-                    </tr>
-                    <tr class="week">
-                        <td id ="month3">May</td>
-                        <td id="row3-col1">{{ days.14 }}</td>
-                        <td id="row3-col2">{{ days.15 }}</td>
-                        <td id="row3-col3">{{ days.16 }}</td>
-                        <td id="row3-col4">{{ days.17 }}</td>
-                        <td id="row3-col5">{{ days.18 }}</td>
-                        <td id="row3-col6">{{ days.19 }}</td>
-                        <td id="row3-col7">{{ days.20 }}</td>
-                    </tr>
-                    <tr class="week">
-                        <td id ="month4">May</td>
-                        <td id="row4-col1">{{ days.21 }}</td>
-                        <td id="row4-col2">{{ days.22 }}</td>
-                        <td id="row4-col3">{{ days.23 }}</td>
-                        <td id="row4-col4">{{ days.24 }}</td>
-                        <td id="row4-col5">{{ days.25 }}</td>
-                        <td id="row4-col6">{{ days.26 }}</td>
-                        <td id="row4-col7">{{ days.27 }}</td>
-                    </tr>
-                    <tr class="week">
-                        <td id ="month5">May</td>
-                        <td id="row5-col1">{{ days.28 }}</td>
-                        <td id="row5-col2">{{ days.29 }}</td>
-                        <td id="row5-col3">{{ days.30 }}</td>
-                        <td id="row5-col4">{{ days.31 }}</td>
-                        <td id="row5-col5">{{ days.32 }}</td>
-                        <td id="row5-col6">{{ days.33 }}</td>
-                        <td id="row5-col7">{{ days.34 }}</td>
-                    </tr>
                 </tbody>
             </table>
         </div>
@@ -97,7 +46,8 @@
         <div style = "margin-left: -100px; list-style-type: none; margin-top: 80px; padding: 0; width: 1100px; background-color: #F9D36D; height: 10px; box-shadow: 0 10px 4px 0 rgba(0, 0, 0, 0.3);"></div>        
         <form action="" method="POST">
             {% csrf_token %}
-            {{ form.event_name.errors }}
+            {{ form.errors }}
+
             {{ form.event_name }}
             <input class = "textEvent" style= "margin-top: 7%; font-weight: bolder;" name = "fname" value = "Timezone: Asia / Manila" readonly>
             <input class = "textEvent" style= "margin-top: 2%; font-weight: bolder;" name = "fname" value = "Select Event Type: Multiple Inviters" readonly>
@@ -114,7 +64,7 @@
 
             {{ form.datecount }}
 
-            <input type="button" class = "genEventButt" id = "Generate Event" value="Generate Event" onclick="customSubmit()">
+            <input type="submit" class = "genEventButt" id = "Generate Event" value="Generate Event">
         </form>
 
     </div>
@@ -127,14 +77,6 @@
 			var today = new Date();
 			today = new Date(today.getFullYear(), today.getMonth(), today.getDate(), 0, 0, 0, 0);
 
-			var dates = document.querySelectorAll(".week td:nth-child(n+2)");		// dates
-
-            dates.forEach(function(element){
-                element.classList.add("white");
-            })
-
-            console.log(dates)
-
 			var hover = false;		// state if hovering
 			var addDate = false;	// state if adding dates
 
@@ -144,15 +86,44 @@
 			var startCol = -1;
 			var startRow = -1;
 
+			var tBody = document.querySelector("tbody");
+
+			let dates = []
+			let counter = 0;
+			let blanks = 0;
+			let date = new Date(today.getFullYear(), today.getMonth(), today.getDate(), 0, 0, 0, 0);
+			for (let row = 1; row < 6; row++){
+				let week = tBody.appendChild(document.createElement("tr"));
+				week.classList.add("week");
+				let month = week.appendChild(document.createElement("td"));
+				month.classList.add("month")
+				month.innerText = date.toString().slice(4, 7)
+				for (let col = 1; col < 8; col++){
+					let day = week.appendChild(document.createElement("td"));
+					day.id = "row" +  row + "-col" + col;
+
+					if (col - 1 !== date.getDay()){
+						blanks++
+						day.classList.add("blank")
+						continue;
+					}
+					day.innerText = date.getDate();
+					day.classList.add("white");
+
+					dates.push(day);
+					date.setDate(date.getDate() + 1);
+				}
+			}
+			
 			// loop through all dates and add event handlers
-			for (let i = 0; i < dates.length; i++){
+			for (i = 0; i < dates.length; i++){
 				const child = dates[i];
 				let temp = new Date(today);
 				temp.setDate(temp.getDate() + i);
 			
 				// handler for click
 				child.addEventListener("mousedown", (event) => {
-                    console.log("hi")
+					console.log("hi")
 					hover = true;
 					
 					startCol = parseInt(child.id[8]);
@@ -225,6 +196,7 @@
 			}
 
 
+
 			// handler after click
 			document.body.addEventListener("mouseup", (event) => {
 				if (hover == true){
@@ -277,15 +249,21 @@
 					temp = j; 
 					for (; j <= maxj; j++){
 						color = document.querySelector("#row" + i  + "-col" + j);
+						if (color.classList.contains("blank")){
+							continue;
+						}
+
 						color.classList.add(className);
 					}
 					j = temp;
 				}
 			}
 
+			var form = document.querySelector("form");
+
 			// post request but with the dates as hidden inputs 
-			function customSubmit(){
-				var form = document.querySelector("form");
+			form.onsubmit = function customSubmit(){
+				
 				var yellowElements = document.querySelectorAll(".yellow");
         
         		let i = 0;
@@ -298,7 +276,9 @@
 					newInput.setAttribute("type", "hidden");
 					newInput.setAttribute("name", "date_" + i);
 
-          			date = new Date(today.valueOf() + ((col - 1) * 24*3600*1000) + ((row - 1) * 7*24*3600*1000));
+          			date = new Date(today.valueOf() + ((col - 1) * 24*3600*1000) + ((row - 1) * 7*24*3600*1000) - (blanks * 24*3600*1000));
+
+					console.log(date)
 
 					newInput.setAttribute("value", `${date.getDate()}-${date.getMonth() + 1}-${date.getFullYear()}`);
 
@@ -310,6 +290,8 @@
 				
 				form.submit();
 			}
+
+
 		</script>
 
 {% endblock %}
