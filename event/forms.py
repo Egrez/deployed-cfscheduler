@@ -64,6 +64,14 @@ class CalendarForm(forms.Form):
 
 	datecount = forms.IntegerField(widget=forms.HiddenInput())
 
+	def clean_datecount(self):
+		datecount = self.cleaned_data.get('datecount')
+		
+		if (not(datecount)): 
+			raise forms.ValidationError(_("Please select a range of dates in the calendar."))
+
+		return datecount
+
 	# https://jacobian.org/2010/feb/28/dynamic-form-generation/
 	# https://stackoverflow.com/questions/6142025/dynamically-add-field-to-a-form
 	def __init__(self, *args, **kwargs):
