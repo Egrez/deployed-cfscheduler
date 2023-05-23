@@ -325,6 +325,12 @@ table.days td{
     user-select: none;
 }
 
+table.days td.month, table.days td.blank{
+    padding: 20px;
+    cursor: default;
+    user-select: none;
+}
+
 .yellow{
     background-color:#F9D36D;
 }
