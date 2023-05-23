@@ -155,10 +155,10 @@
         let end = schedule['end'];
         let id = schedule['id']
 
-        diff = (new Date(start.getFullYear(), start.getMonth(), start.getDate(), 8, 0, 0, 0).valueOf() - today.valueOf()) / (24 * 3600 * 1000);
+        diff = (new Date(start.getFullYear(), start.getMonth(), start.getDate(), 8, 0, 0, 0).valueOf() - today.valueOf() + (blanks * 24*3600*1000)) / (24 * 3600 * 1000);
 
         row = Math.floor(diff / 7) + 1;
-        col = diff % 7 + 1 + blanks; 
+        col = diff % 7 + 1; 
         
         calendarElement = document.querySelector("#row" + row  + "-col" + col);
 

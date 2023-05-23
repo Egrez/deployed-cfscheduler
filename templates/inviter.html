@@ -139,11 +139,13 @@
     let index = 0;
     dates =[];
     for (let day of availableDates){
-        diff = (day.valueOf() - today.valueOf()) / (24 * 3600 * 1000);
+        diff = (day.valueOf() - today.valueOf() + (blanks * 24*3600*1000)) / (24 * 3600 * 1000);
         row = Math.floor(diff / 7) + 1;
-        col = diff % 7 + 1 + blanks; 
+        col = diff % 7 + 1; 
         
         dates.push(day.toString().slice(4,15));
+        
+        console.log(col)
 
         calendarElement = document.querySelector("#row" + row  + "-col" + col);
         calendarElement.classList.add("yellow");
