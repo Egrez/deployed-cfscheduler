@@ -8,7 +8,7 @@
 <div class = "row">
     <div class = "column">
         <img style = "left: -2%; margin-left: 0; padding-left: 0;" src = "{% static 'logo.png'  %}" width = "510.35px" height = "320.45px">
-        <div class = "calendar" style = "margin-left: 10%; max-width: 690px;" >
+        <div class = "calendar" style = "margin-left: 15%; max-width: 650px;" >
             <div class = "month" style = "text-align: center; padding: 10px;">
                 <h2>{{ month }} {{ year }}</h2>
             </div>
@@ -183,6 +183,7 @@
         }
         
         let timeRow = document.createElement("div");
+        timeRow.classList.add('time-row');
 
         let timeLabelContainer = document.createElement("span");
         timeLabelContainer.classList.add("time");
