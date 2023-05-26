@@ -314,15 +314,27 @@ html,body
     bottom: 0;
 }
 
+table.days {
+    text-align: center;
+    font-size: large;
+    margin-top: 15px;
+    margin: 15px;
+    table-layout: fixed;
+
+}
+
 table.days th{
     color: black;
     padding: 20px;
+    min-width: 73px;
+    max-width: 73px;
 }
 
 table.days td{
-    padding: 20px;
     cursor: pointer;
     user-select: none;
+    padding: 20px;
+    
 }
 
 table.days td.month, table.days td.blank{
@@ -374,7 +386,26 @@ table.days td.month, table.days td.blank{
 .time-container{
     visibility: hidden;
     position: absolute;
+    margin-top: 20px;
+    margin-bottom: 10px;
     width: 800px; 
+    height: 480px;
+    overflow-y: auto;
+}
+
+.time-container::-webkit-scrollbar{
+    width: 8px;
+}
+
+.time-container::-webkit-scrollbar-track{
+    background-color:  #F9D36D;
+    border-radius: 20px;
+    box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+}
+
+.time-container::-webkit-scrollbar-thumb{
+    background-color: #413D3D;
+    border-radius: 20px;
 }
 
 .hidden {
@@ -382,9 +413,9 @@ table.days td.month, table.days td.blank{
 }
 
 .time-row{
+    margin-top: 10px;
     padding-left: 20px;
     padding-bottom: 10px;
-    padding-top: 10px;
 }
 
 .name-container{
@@ -393,13 +424,16 @@ table.days td.month, table.days td.blank{
     height: 31px;
     margin-left: 4%;
     padding-left: 20px;
-    font-family: Poppins;
+    font-family: Poppins_bold;
+    text-align: center;
     outline-style: solid;
     outline-color: black;
     outline-width: thin;
     background-color: white;
     border-radius: 5px;
     vertical-align:top;
+    margin-top: 5px;
+    padding-top: 3px;
 }
 
 .meeting_details{
