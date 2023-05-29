@@ -674,8 +674,8 @@ table.days td.month, table.days td.blank{
 
 .popup-event {
     position: absolute;
-    margin-left: -130px;
-    margin-top: -110px;
+    margin-left: -8%;
+    margin-top: -4%;
     --t: 30px;
     --r: 25px;
     --_d: 0%;
@@ -687,6 +687,7 @@ table.days td.month, table.days td.blank{
     radial-gradient(50% 50%,#000 98%,#0000 101%) 
       0 0/var(--r) var(--r) space padding-box;
     max-width: 300px;
+    min-height: 115px;
     background: linear-gradient(135deg,#ffc31d,#F9D36D) border-box;
     border-left: var(--t) solid #0000;
     place-self: start;
@@ -695,8 +696,8 @@ table.days td.month, table.days td.blank{
 .popup-inviter {
     position: absolute;
     font-family: Poppins_bold;
-    margin-left: -100px;
-    margin-top: -10px;
+    margin-left: -6%; 
+    margin-top: 0%;
     --t: 30px;
     --r: 25px;
     --_d: 100%;
@@ -717,8 +718,8 @@ table.days td.month, table.days td.blank{
 .popup-invitee {
     position: absolute;
     font-family: Poppins_bold;
-    margin-top: 100px;
-    margin-left: 450px;
+    margin-left: 22%;
+    margin-top: 6%;
     --t: 30px;
     --r: 25px;
     --_d: 100%;

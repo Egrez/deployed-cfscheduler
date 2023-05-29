@@ -72,7 +72,7 @@
             <p style = "margin-top: 5%; font-family: Poppins_bold; margin-left: 10%;">To invite people to this event, you can email them, send them a Facebook message, or just direct them to <a href="http://{{ share_link }}"> {{ share_link }} </a>
 
             {% if form.errors%} 
-                <div class = 'popup-inviter'>{{ form.errors }}</div>
+                <div class = 'popup-inviter'>{{ form.schedulecount.errors }}</div>
             {% endif %} 
             {% if success %}<div class = 'popup-inviter' style = "text-align: center;">Schedules saved successfully</div>{% endif %}
 
