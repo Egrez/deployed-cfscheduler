@@ -39,7 +39,7 @@ class CalendarForm(forms.Form):
 		widget = forms.TimeInput(attrs = {
 			'type' : 'time',
             "class" : "dropdown",
-            "style" : "left: 853px; margin-bottom: 80px; font-family: Poppins; font-size: 30px; font-weight: bold; color: #f2f2f2;",
+            "style" : "left: 45%; margin-bottom: 80px; font-family: Poppins; font-size: 30px; font-weight: bold; color: #f2f2f2;",
 		}),
 	)
 
@@ -48,7 +48,7 @@ class CalendarForm(forms.Form):
 		widget = forms.TimeInput(attrs = {
 			'type' : 'time',
             "class" : "dropdown",
-            "style" : "left: 1465px; margin-bottom: 80px; font-family: Poppins; font-size: 30px; font-weight: bold; color: #f2f2f2;",
+            "style" : "left: 75%; margin-bottom: 80px; font-family: Poppins; font-size: 30px; font-weight: bold; color: #f2f2f2;",
 		}),
 	)
 

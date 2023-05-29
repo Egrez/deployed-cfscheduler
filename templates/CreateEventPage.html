@@ -43,7 +43,7 @@
     </div>
     <div class = "column">
         <img id = "logo" style = "margin-top: 100px; margin-right: 200px; margin-left: 0;" src = "{% static 'logo.png' %}" width = "710.35px" height = "440.45px">
-        <div style = "margin-left: -100px; list-style-type: none; margin-top: 80px; padding: 0; width: 1100px; background-color: #F9D36D; height: 10px; box-shadow: 0 10px 4px 0 rgba(0, 0, 0, 0.3);"></div>        
+        <div style = "margin-left: -100px; list-style-type: none; margin-top: 80px; padding: 0; width: 135%; background-color: #F9D36D; height: 10px; box-shadow: 0 10px 4px 0 rgba(0, 0, 0, 0.3);"></div>        
         <form action="" method="POST">
             {% csrf_token %}
 			{% if form.errors %}
@@ -57,8 +57,8 @@
             {{ form.duration }}
             <!-- <input class = "textEvent" style= "margin-top: 2%; font-weight: bolder;" name = "fname" value = "Event Duration: 15 Minutes" readonly> -->
         
-            <div class = "label" style = "left: 875px;" ><p style = "font-family: Montserrat_bold; margin-top: 20px; font-size: 30px; color: #413D3D; font-weight: bold;">Start time</p></div>
-            <div class = "label" style = "left: 1485px;"><p style = "font-family: Montserrat_bold; margin-top: 20px; font-size: 30px; color: #413D3D; font-weight: bold;">End time</p></div>
+            <div class = "label" style = "left: 46%;" ><p style = "font-family: Montserrat_bold; margin-top: 20px; font-size: 30px; color: #413D3D; font-weight: bold;">Start time</p></div>
+            <div class = "label" style = "left: 76%;"><p style = "font-family: Montserrat_bold; margin-top: 20px; font-size: 30px; color: #413D3D; font-weight: bold;">End time</p></div>
             {{ form.start_time }}
             {{ form.end_time }}
             <!-- <div class = "dropdown" style = "left: 853px; margin-bottom: 80px;"><p style = "font-family: Poppins; font-size: 30px; font-weight: bold; color: #f2f2f2; margin-top: -14px; margin-left: 27px;">9:00 AM</p></div>

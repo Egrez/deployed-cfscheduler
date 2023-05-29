@@ -61,7 +61,6 @@ html,body
     bottom: 0;
     left: -10px;
     right: 0;
-    margin-bottom: 0;
     height: 17%;
 }
 
@@ -707,3 +706,24 @@ table.days td.month, table.days td.blank{
   background: #333333;
   color: #ffc31d
 }
+
+@media screen and (max-width: 1366px) and (max-height:768px) {
+    html {
+        zoom: 75%;
+    }
+    
+}
+
+@media screen and (max-width: 1680px) and (max-height: 1050px) {
+    html {
+        zoom: 90%;
+    }
+    
+}
+
+@media screen and (max-width: 1360px) and (max-height: 768px) {
+    html {
+        zoom: 67%;
+    }
+    
+} 
