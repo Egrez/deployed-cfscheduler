@@ -381,6 +381,7 @@ table.days td.month, table.days td.blank{
     margin-top: 40%;
     height: 530px;
     text-align: center;
+    box-shadow: 5px 8px 5px 0 rgba(0, 0, 0, .4);
 }
 
 .time-container{
@@ -454,8 +455,10 @@ table.days td.month, table.days td.blank{
     background-color: #666565;
     color: #f2f2f2;
     font-size: 30px;
-    width: 303px;
     height: 76px;
+    text-align: center;
+    padding-left: 20px;
+    padding-right: 20px;
 }
 
 .lockButt:hover {
@@ -610,8 +613,8 @@ table.days td.month, table.days td.blank{
 .popup-invitee {
     position: absolute;
     font-family: Poppins_bold;
-    margin-top: 10px;
-    margin-left: 400px;
+    margin-top: 100px;
+    margin-left: 450px;
     --t: 30px;
     --r: 25px;
     --_d: 100%;
