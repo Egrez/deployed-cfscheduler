@@ -243,7 +243,6 @@ html,body
 
 .dropdown {
     list-style-type: none;
-    padding-top: 20px;
     width: 300px;
     background-color: #333333;
     position: absolute;
@@ -373,6 +372,7 @@ table.days td.month, table.days td.blank{
 
 .time-stack{
     background-color: #F9D36D; 
+    font-family: Poppins;
     outline-style: solid;
     outline-color: black;
     outline-width: medium;
@@ -384,6 +384,7 @@ table.days td.month, table.days td.blank{
 }
 
 .time-container{
+    font-family: Poppins;
     visibility: hidden;
     position: absolute;
     margin-top: 20px;
@@ -523,6 +524,8 @@ table.days td.month, table.days td.blank{
     text-align: center;
     align-items: center;
     box-shadow: 5px 8px 5px 0 rgba(0, 0, 0, .4);
+    font-family: Poppins;
+    font-size: small;
 }
 
 .invitee-message{
@@ -562,9 +565,10 @@ table.days td.month, table.days td.blank{
     color: #ffc31d;
 }
 
-.popup {
+.popup-event {
     position: absolute;
-    right: 175px;
+    margin-left: -130px;
+    margin-top: -110px;
     --t: 30px;
     --r: 25px;
     --_d: 0%;
@@ -578,6 +582,53 @@ table.days td.month, table.days td.blank{
     max-width: 300px;
     background: linear-gradient(135deg,#ffc31d,#F9D36D) border-box;
     border-left: var(--t) solid #0000;
-    margin-right: var(--t);
     place-self: start;
+}
+
+.popup-inviter {
+    position: absolute;
+    font-family: Poppins_bold;
+    margin-left: -50px;
+    margin-top: -10px;
+    --t: 30px;
+    --r: 25px;
+    --_d: 100%;
+    padding: calc(2*var(--r)/3);
+    -webkit-mask: radial-gradient(var(--t) at var(--_d) 0,#0000 98%,#000 102%) 
+      var(--_d) 100%/calc(100% - var(--r)) var(--t) no-repeat,
+    conic-gradient(at var(--r) var(--r),#000 75%,#0000 0) 
+      calc(var(--r)/-2) calc(var(--r)/-2) padding-box, 
+    radial-gradient(50% 50%,#000 98%,#0000 101%) 
+      0 0/var(--r) var(--r) space padding-box;
+    min-width: 300px;
+    max-width: 300px;
+    background: linear-gradient(135deg,#ffc31d,#F9D36D) border-box;
+    border-right: var(--t) solid #0000;
+    place-self: end;
+}
+
+.popup-invitee {
+    position: absolute;
+    font-family: Poppins_bold;
+    margin-top: 10px;
+    margin-left: 400px;
+    --t: 30px;
+    --r: 25px;
+    --_d: 100%;
+    padding: calc(2*var(--r)/3);
+    -webkit-mask: radial-gradient(var(--t) at var(--_d) 0,#0000 98%,#000 102%) 
+      var(--_d) 100%/calc(100% - var(--r)) var(--t) no-repeat,
+    conic-gradient(at var(--r) var(--r),#000 75%,#0000 0) 
+      calc(var(--r)/-2) calc(var(--r)/-2) padding-box, 
+    radial-gradient(50% 50%,#000 98%,#0000 101%) 
+      0 0/var(--r) var(--r) space padding-box;
+    min-width: 300px;
+    max-width: 300px;
+    background: linear-gradient(135deg,#ffc31d,#F9D36D) border-box;
+    border-right: var(--t) solid #0000;
+    place-self: end;
+}
+
+.errorlist {
+    font-family: Poppins_bold;
 }
