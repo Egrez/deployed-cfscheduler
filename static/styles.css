@@ -707,16 +707,37 @@ table.days td.month, table.days td.blank{
   color: #ffc31d
 }
 
-@media screen and (max-width: 1366px) and (max-height:768px) {
+@media screen and (max-width: 1680px) and (max-height: 1050px) {
     html {
-        zoom: 75%;
+        zoom: 90%;
     }
     
 }
 
-@media screen and (max-width: 1680px) and (max-height: 1050px) {
+@media screen and (max-width: 1600px) and (max-height: 900px) {
     html {
-        zoom: 90%;
+        zoom: 80%;
+    }
+    
+}
+
+@media screen and (max-width: 1440px) and (max-height: 900px) {
+    html {
+        zoom: 80%;
+    }
+    
+}
+
+@media screen and (max-width: 1400px) and (max-height: 1050px) {
+    html {
+        zoom: 80%;
+    }
+    
+}
+
+@media screen and (max-width: 1366px) and (max-height:768px) {
+    html {
+        zoom: 75%;
     }
     
 }
@@ -727,3 +748,65 @@ table.days td.month, table.days td.blank{
     }
     
 } 
+
+@media screen and (max-width: 1280px) and (max-height: 1024px) {
+    html {
+        zoom: 67%;
+    }
+    
+}
+
+@media screen and (max-width: 1280px) and (max-height: 960px) {
+    html {
+        zoom: 67%;
+    }
+    
+}
+
+@media screen and (max-width: 1280px) and (max-height: 800px) {
+    html {
+        zoom: 67%;
+    }
+    
+}
+
+@media screen and (max-width: 1280px) and (max-height: 768px) {
+    html {
+        zoom: 67%;
+    }
+    
+}
+
+@media screen and (max-width: 1280px) and (max-height: 720px) {
+    html {
+        zoom: 67%;
+    }
+    
+}
+
+@media screen and (max-width: 1280px) and (max-height: 600px) {
+    html {
+        zoom: 67%;
+    }
+    
+}
+
+@media screen and (max-width: 1152px) and (max-height: 864px) {
+    html {
+        zoom: 55%;
+    }
+    
+}
+
+@media screen and (max-width: 1024px) and (max-height: 768px) {
+    html {
+        zoom: 50%;
+    }
+}
+
+@media screen and (max-width: 800px) and (max-height: 600px) {
+    html {
+        zoom: 40%;
+    }
+    
+}
