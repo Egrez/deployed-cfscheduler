@@ -588,7 +588,7 @@ table.days td.month, table.days td.blank{
 .popup-inviter {
     position: absolute;
     font-family: Poppins_bold;
-    margin-left: -50px;
+    margin-left: -100px;
     margin-top: -10px;
     --t: 30px;
     --r: 25px;
