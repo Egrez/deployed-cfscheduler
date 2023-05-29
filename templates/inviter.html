@@ -71,8 +71,10 @@
             {{ form.meeting_details }}
             <p style = "margin-top: 5%; font-family: Poppins_bold; margin-left: 10%;">To invite people to this event, you can email them, send them a Facebook message, or just direct them to <a href="http://{{ share_link }}"> {{ share_link }} </a>
 
-            {{ form.errors }}
-            {% if success %}<div>Schedules saved successfully</div>{% endif %}
+            {% if form.errors%} 
+                <div class = 'popup-inviter'>{{ form.errors }}</div>
+            {% endif %} 
+            {% if success %}<div class = 'popup-inviter' style = "text-align: center;">Schedules saved successfully</div>{% endif %}
 
             <input type="submit" class="lockButt" value="Lock Schedule">
         </form>
