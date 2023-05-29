@@ -22,7 +22,7 @@
         <div class = "navBar" style = "z-index: 999;">
             <a href="{% url 'home' %}" style = "transition: top 0.3s"><i class="fa fa-home"></i> Home</a>
             <a href="{% url 'home' %}#About Us" style = "transition: top 0.3s"><i class="fa fa-newspaper-o"></i> About Us</a>
-            <a href="#"><i class="fa fa-question-circle-o"></i> FAQs</a>
+            <a href="{% url 'home' %}#FAQs" style = "transition: top 0.3s"><i class="fa fa-question-circle-o"></i> FAQs</a>
         </div>
     </nav>
     {% block content %}

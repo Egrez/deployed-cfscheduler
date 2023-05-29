@@ -47,7 +47,8 @@
         <form action="" method="POST">
             {% csrf_token %}
 			{% if form.errors %}
-            	<div class = 'popup-event'>{{ form.errors }}</div>
+            	<div class = 'popup-event'>{{ form.event_name.errors }}{{ form.duration.errors }}{{ form.start_time.errors }}{{ form.end_time.errors }}{{ form.datecount.errors }}</div>
+				
 			{% endif %}
 
             {{ form.event_name }}
