@@ -1,6 +1,7 @@
 from django.shortcuts import render, redirect, get_object_or_404
 from django.urls import reverse
 
+from event.models import OauthCredentials
 from .models import Inviter, Schedule
 from event.models import Event
 
@@ -90,6 +91,7 @@ def inviter(request, event_id):
 		'available_dates' : available_dates,
 		'available_times' : available_times,
 		'inviter_name' : inviter_name,
+		'inviter_id' : inviter.pk,
 		'existing_schedules' : existing_schedules,
 		'form' : form,
 		'success' : success,

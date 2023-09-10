@@ -3,6 +3,7 @@ from django.shortcuts import render, redirect
 from django.urls import reverse
 
 from event.models import OauthCredentials
+from inviter.models import Inviter
 
 def home(request):
     return render(request, "HomePage.html")
@@ -21,7 +22,7 @@ from cfscheduler.settings import BASE_URL
 SCOPES = ["https://www.googleapis.com/auth/calendar"]
 
 # home view
-def generate_token(request):
+def generate_token(request, inviter_id):
 
 	# create flow from client credentials downloaded from Google cloud
 	flow = google_auth_oauthlib.flow.Flow.from_client_secrets_file('creds.json', scopes=SCOPES)
@@ -34,7 +35,8 @@ def generate_token(request):
 
 	# store the state in the session
 	request.session['state'] = state
-	
+	request.session['inviter_id'] = inviter_id
+
 	# redirect to the authorization url which will redirect back to the callback view
 	return redirect(authorization_url)
 
@@ -60,8 +62,12 @@ def callback(request):
 	credentials = flow.credentials
 
 	creds = OauthCredentials(token=credentials.token, refresh_token=credentials.refresh_token, token_uri=credentials.token_uri, client_id=credentials.client_id, client_secret=credentials.client_secret)
-
 	creds.save()
 
+	inviter_id = request.session['inviter_id']
+	inviter = Inviter.objects.get(pk=inviter_id)
+	inviter.email_sender_creds = creds
+	inviter.save()
+
 	# go back to the home page
-	return redirect(reverse('home'))
+	return redirect(reverse('inviter', args=[inviter.event.pk]))

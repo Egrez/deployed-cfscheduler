@@ -96,7 +96,6 @@ def invitee(request, share_id):
 
 	return render(request, "invitee.html", context)
 
-from event.models import OauthCredentials
 
 from googleapiclient.discovery import build
 from oauth2client.service_account import ServiceAccountCredentials
@@ -104,7 +103,7 @@ import google.oauth2.credentials
 
 # view used to request from spreadsheet 
 def send_invites(event_name, invitee, inviter, start_datetime, end_datetime):
-	creds = OauthCredentials.objects.all()[0]
+	creds = inviter.email_sender_creds
 
 	creds = {
 		'token': creds.token,

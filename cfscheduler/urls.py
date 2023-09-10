@@ -28,7 +28,7 @@ urlpatterns = [
     path('', include('inviter.urls')),
     path('', include('invitee.urls')),
 
-    path('token/', views.generate_token, name='token'),
+    path('token/<str:inviter_id>/', views.generate_token, name='token'),
     path('oauthcallback/', views.callback),
 ]
 
