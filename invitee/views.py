@@ -147,7 +147,7 @@ def send_invites(event_name, invitee, inviter, start_datetime, end_datetime):
 			],
 		},
 
-		"guestsCanSeeOtherGuests" : False,
+		"guestsCanSeeOtherGuests" : True,
 	}
 
 	event = service.events().insert(calendarId="primary", body=event, sendUpdates="all").execute()
